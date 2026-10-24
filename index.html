@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CoreProtect Casebook</title>
-<meta name="description" content="A staff field manual for CoreProtect: a walkthrough of a PvP robbery with a hidden stash and a dupe, a radius lab, a command builder and every /co command.">
+<title>Досье CoreProtect</title>
+<meta name="description" content="Руководство по CoreProtect для персонала сервера: разбор дела об убийстве, тайнике и дюпе, лаборатория радиуса, конструктор команд и все команды /co.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap">
 <style>
 :root{
   /* Layout: sticky top nav; a case file of numbered steps with prose on the left and in-game evidence (chat, map) on the right; dense reference grids below. */
@@ -39,7 +39,7 @@
   --chat-bg:rgba(0,0,0,.5);
   --mc-0:#000000;--mc-1:#0000AA;--mc-2:#00AA00;--mc-3:#00AAAA;--mc-4:#AA0000;--mc-5:#AA00AA;--mc-6:#FFAA00;--mc-7:#AAAAAA;
   --mc-8:#555555;--mc-9:#5555FF;--mc-a:#55FF55;--mc-b:#55FFFF;--mc-c:#FF5555;--mc-d:#FF55FF;--mc-e:#FFFF55;--mc-f:#FFFFFF;
-  --f-display:"Chakra Petch","Bahnschrift","Segoe UI",system-ui,sans-serif;
+  --f-display:"Exo 2","Bahnschrift","Segoe UI",system-ui,sans-serif;
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
   --f-chat:"Pixelify Sans","IBM Plex Mono",ui-monospace,monospace;
@@ -468,9 +468,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 }
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%20shape-rendering%3D%22crispEdges%22%3E%3Cpath%20fill%3D%22%2306797a%22%20d%3D%22M2%201h12v8h-1v2h-1v1h-1v1h-1v1H9v1H7v-1H6v-1H5v-1H4v-1H3V9H2z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M7%204h2v3h2v2H7z%22%2F%3E%3C%2Fsvg%3E">
-<meta property="og:title" content="CoreProtect Casebook">
-<meta property="og:description" content="A staff field manual for CoreProtect: a walkthrough of a PvP robbery with a hidden stash and a dupe, a radius lab, a command builder and every /co command.">
+<meta property="og:title" content="Досье CoreProtect">
+<meta property="og:description" content="Руководство по CoreProtect для персонала сервера: разбор дела об убийстве, тайнике и дюпе, лаборатория радиуса, конструктор команд и все команды /co.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -481,20 +482,20 @@ img{max-width:100%}
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="CoreProtect Casebook, back to top">
+    <a class="brand" href="#top" aria-label="Досье CoreProtect, наверх">
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M2 1h12v8h-1v2h-1v1h-1v1h-1v1H9v1H7v-1H6v-1H5v-1H4v-1H3V9H2z"/><path fill="var(--surface)" d="M7 4h2v3h2v2H7z"/></svg>
-      <span>CoreProtect Casebook</span>
+      <span>Досье CoreProtect</span>
     </a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#case">Case</a>
-      <a href="#fast">Fast lane</a>
-      <a href="#lab">Radius lab</a>
-      <a href="#builder">Builder</a>
-      <a href="#commands">Commands</a>
-      <a href="#params">Parameters</a>
-      <a href="#actions">Actions</a>
-      <a href="#purge">Purge</a>
-      <a href="#perms">Permissions</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#case">Дело</a>
+      <a href="#fast">Быстро</a>
+      <a href="#lab">Радиус</a>
+      <a href="#builder">Конструктор</a>
+      <a href="#commands">Команды</a>
+      <a href="#params">Параметры</a>
+      <a href="#actions">Действия</a>
+      <a href="#purge">Очистка</a>
+      <a href="#perms">Права</a>
       <span class="nav-ind" aria-hidden="true"></span>
     </nav>
   </div>
@@ -504,35 +505,35 @@ img{max-width:100%}
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Field manual for Minecraft staff</p>
-        <h1>Every rollback names <span class="k">who<span class="kt">u:</span></span>, <span class="k">when<span class="kt">t:</span></span> and <span class="k">where<span class="kt">r:</span></span>.</h1>
-        <p class="lede">You join after the damage is done. A player was killed, the loot went into a hidden chest, and some of it was duped. This guide walks through the cleanup with CoreProtect, step by step, without touching anyone else's things. Every /co command and parameter is below it.</p>
+        <p class="eyebrow">Руководство для персонала Minecraft-сервера</p>
+        <h1>В каждом откате указаны <span class="k">кто<span class="kt">u:</span></span>, <span class="k">когда<span class="kt">t:</span></span> и <span class="k">где<span class="kt">r:</span></span>.</h1>
+        <p class="lede">Вы заходите на сервер, когда всё уже случилось. Игрока убили, лут спрятан в тайном сундуке, а часть вещей дюпнута. Здесь пошагово разобрано, как всё исправить через CoreProtect и не задеть чужие вещи. Ниже собраны все команды и параметры /co.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#case">Open the case <span class="arr" aria-hidden="true">&rarr;</span></a>
-          <a class="btn" href="#builder">Build a command</a>
+          <a class="btn primary" href="#case">Открыть дело <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a class="btn" href="#builder">Собрать команду</a>
         </div>
         <dl class="facts">
-          <div><dt>/co lookup</dt><dd>Read-only. Searches the whole server unless you give r:.</dd></div>
-          <div><dt>/co rollback</dt><dd>Writes to the world. Uses r:10 around you if you give no r:.</dd></div>
-          <div><dt>/co undo</dt><dd>Reverses a rollback or restore with the opposite action.</dd></div>
+          <div><dt>/co lookup</dt><dd>Только чтение. Ищет по всему серверу, если не указан r:.</dd></div>
+          <div><dt>/co rollback</dt><dd>Меняет мир. Без r: работает в радиусе 10 блоков вокруг вас.</dd></div>
+          <div><dt>/co undo</dt><dd>Отменяет откат или восстановление обратным действием.</dd></div>
         </dl>
       </div>
-      <div class="screen" aria-label="Animated replay of an investigation in Minecraft chat">
+      <div class="screen" aria-label="Анимированный повтор расследования в чате Minecraft">
         <canvas id="world" aria-hidden="true"></canvas>
-        <span class="screen-tag">replay &middot; illustrative output</span>
+        <span class="screen-tag">повтор &middot; пример вывода</span>
         <div class="chat" id="heroChat" aria-live="off"></div>
         <div class="chatbar"><span id="heroInput"></span><span class="caret" aria-hidden="true"></span></div>
       </div>
     </div>
   </section>
 
-  <section class="rules-band" aria-label="Ground rules">
+  <section class="rules-band" aria-label="Основные правила">
     <div class="wrap">
       <div class="rules">
-        <div class="rule reveal"><span class="tag">/co l &rarr; /co rb</span><h3>Look before you touch</h3><p>A lookup never changes anything. Run your exact parameters as a lookup first, then swap <code>l</code> for <code>rb</code>.</p></div>
-        <div class="rule reveal"><span class="tag">u: t: r:</span><h3>Name who, when and where</h3><p>Leave out <code>u:</code> and the rollback covers every player inside the radius, including people who did nothing wrong.</p></div>
-        <div class="rule reveal"><span class="tag">thief first, victim second</span><h3>Remove, then return</h3><p>Take the loot out of the stash before you give it back. In the other order, you have duplicated it yourself.</p></div>
-        <div class="rule reveal"><span class="tag">/co undo</span><h3>Keep the seatbelt on</h3><p>If a rollback took too much, <code>/co undo</code> runs the opposite action and puts it back.</p></div>
+        <div class="rule reveal"><span class="tag">/co l &rarr; /co rb</span><h3>Сначала посмотрите</h3><p>Поиск ничего не меняет. Запустите свои параметры как поиск, а потом замените <code>l</code> на <code>rb</code>.</p></div>
+        <div class="rule reveal"><span class="tag">u: t: r:</span><h3>Укажите кто, когда и где</h3><p>Без <code>u:</code> откат захватит всех игроков в радиусе, включая тех, кто ничего не нарушал.</p></div>
+        <div class="rule reveal"><span class="tag">сначала вор, потом жертва</span><h3>Сначала забрать, потом вернуть</h3><p>Уберите лут из тайника, прежде чем возвращать его жертве. Если сделать наоборот, вы сами его продюпаете.</p></div>
+        <div class="rule reveal"><span class="tag">/co undo</span><h3>Страховка всегда под рукой</h3><p>Если откат забрал лишнее, <code>/co undo</code> выполнит обратное действие и всё вернёт.</p></div>
       </div>
     </div>
   </section>
@@ -541,41 +542,41 @@ img{max-width:100%}
     <div class="wrap">
       <div class="case-top">
         <header class="sec-head">
-          <p class="eyebrow">Case 0417</p>
-          <h2>The ambush on the spawn road</h2>
-          <p>You log in at 21:40. <span data-name="victim">Lumen</span> says they were killed on the spawn road and everything they carried is gone. Nobody else saw it. CoreProtect logged all of it.</p>
+          <p class="eyebrow">Дело 0417</p>
+          <h2>Засада на дороге от спавна</h2>
+          <p>Вы заходите в 21:40. <span data-name="victim">Lumen</span> сообщает об убийстве на дороге от спавна: все вещи пропали. Свидетелей нет. Зато CoreProtect записал всё.</p>
         </header>
         <div class="setup reveal">
-          <div class="setup-h"><h3>Your case details</h3><span>Every command below updates as you type.</span></div>
+          <div class="setup-h"><h3>Детали дела</h3><span>Все команды ниже обновляются по мере ввода.</span></div>
           <div class="fields">
-            <div class="field"><label for="in-thief">Suspect</label><input id="in-thief" value="xVex" autocomplete="off" spellcheck="false" maxlength="16"></div>
-            <div class="field"><label for="in-victim">Victim</label><input id="in-victim" value="Lumen" autocomplete="off" spellcheck="false" maxlength="16"></div>
-            <div class="field"><label for="in-t">Time window (t:)</label><input id="in-t" value="2h" autocomplete="off" spellcheck="false" maxlength="12"></div>
+            <div class="field"><label for="in-thief">Подозреваемый</label><input id="in-thief" value="xVex" autocomplete="off" spellcheck="false" maxlength="16"></div>
+            <div class="field"><label for="in-victim">Жертва</label><input id="in-victim" value="Lumen" autocomplete="off" spellcheck="false" maxlength="16"></div>
+            <div class="field"><label for="in-t">Окно времени (t:)</label><input id="in-t" value="2h" autocomplete="off" spellcheck="false" maxlength="12"></div>
           </div>
-          <p class="setup-note">Pick a window that reaches back past the incident with some margin. Names are Minecraft usernames: letters, numbers and underscores.</p>
+          <p class="setup-note">Берите окно с запасом, чтобы оно точно захватило происшествие. Ники в Minecraft состоят из латинских букв, цифр и подчёркиваний.</p>
         </div>
       </div>
 
-      <p class="tl-h">What the logs will show you</p>
+      <p class="tl-h">Что покажут логи</p>
       <ol class="tl" id="timeline">
-        <li class="bad"><time>21:02</time><p data-md="{victim} is killed on the spawn road at x-140 z902."></p></li>
-        <li class="bad"><time>21:03</time><p data-md="{thief} picks up the gear and 18 diamonds."></p></li>
-        <li class="bad"><time>21:13</time><p data-md="{thief} fills a buried chest at x-312 y41 z877."></p></li>
-        <li class="dupe"><time>21:22</time><p data-md="Two more stacks of 18 diamonds go in. {victim} only ever had 18."></p></li>
-        <li><time>21:31</time><p>Pip stores their own loot in a chest 6 blocks from the stash.</p></li>
-        <li class="you"><time>21:40</time><p data-md="You log in. {victim} reports the robbery."></p></li>
+        <li class="bad"><time>21:02</time><p data-md="{victim} погибает на дороге от спавна у x-140 z902."></p></li>
+        <li class="bad"><time>21:03</time><p data-md="{thief} подбирает снаряжение и 18 алмазов."></p></li>
+        <li class="bad"><time>21:13</time><p data-md="{thief} складывает всё в закопанный сундук на x-312 y41 z877."></p></li>
+        <li class="dupe"><time>21:22</time><p data-md="В сундук уходят ещё две стопки по 18 алмазов. А у {victim} их было всего 18."></p></li>
+        <li><time>21:31</time><p>Pip кладёт свой лут в сундук в 6 блоках от тайника.</p></li>
+        <li class="you"><time>21:40</time><p data-md="Вы заходите на сервер. {victim} сообщает об ограблении."></p></li>
       </ol>
 
       <div class="phase">
-        <div class="phase-head"><span class="tag">A &middot; read-only</span><h3>Reconstruct what happened</h3><p>Lookups only. Nothing in this phase changes the world, so you can run each command as often as you like.</p></div>
+        <div class="phase-head"><span class="tag">A &middot; только чтение</span><h3>Восстановите картину</h3><p>Только поиск. На этом этапе ничего в мире не меняется, поэтому каждую команду можно запускать сколько угодно раз.</p></div>
         <div id="phase-A"></div>
       </div>
       <div class="phase">
-        <div class="phase-head write"><span class="tag">B &middot; writes to the world</span><h3>Clean up the stash and the dupe</h3><p>From here on, commands change blocks and items. Each one is scoped to the suspect, the incident window and the place you are standing.</p></div>
+        <div class="phase-head write"><span class="tag">B &middot; меняет мир</span><h3>Очистите тайник и дюп</h3><p>Дальше команды меняют блоки и предметы. Каждая ограничена подозреваемым, временем происшествия и местом, где вы стоите.</p></div>
         <div id="phase-B"></div>
       </div>
       <div class="phase">
-        <div class="phase-head ret"><span class="tag">C &middot; return and verify</span><h3>Give it back, then check your work</h3><p>Only after the stolen and duped items are gone from the stash.</p></div>
+        <div class="phase-head ret"><span class="tag">C &middot; возврат и проверка</span><h3>Верните вещи и проверьте результат</h3><p>Только после того, как украденное и дюпнутое убрано из тайника.</p></div>
         <div id="phase-C"></div>
       </div>
     </div>
@@ -584,30 +585,30 @@ img{max-width:100%}
   <section id="fast" class="section">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Fast lane</p>
-        <h2>The whole case at speed</h2>
-        <p>The same investigation as a checklist, with your names filled in. Tick each step off as you go. The habits on the right are what make it quick in-game.</p>
+        <p class="eyebrow">Быстрый режим</p>
+        <h2>Всё дело на скорости</h2>
+        <p>То же расследование в виде чек-листа с вашими никами. Отмечайте шаги по ходу. Привычки справа и делают работу в игре быстрой.</p>
       </header>
       <div class="fast">
         <div>
-          <div class="run-h"><h3>Run sheet</h3><button class="btn sm" type="button" id="copyAll">Copy all commands</button></div>
+          <div class="run-h"><h3>Чек-лист</h3><button class="btn sm" type="button" id="copyAll">Скопировать все команды</button></div>
           <ol class="runlist" id="runlist"></ol>
         </div>
         <div class="habits">
-          <div class="habit reveal"><h4>Recall the lookup instead of retyping it</h4><p>Open chat with <span class="kbd">T</span>, press <span class="kbd">&uarr;</span> to bring back your last command, change <code>l</code> to <code>rb</code>, press <span class="kbd">Enter</span>. The parameters stay identical to the lookup you just checked.</p></div>
-          <div class="habit reveal"><h4>Use the short forms</h4>
+          <div class="habit reveal"><h4>Вызывайте поиск снова, а не печатайте заново</h4><p>Откройте чат клавишей <span class="kbd">T</span>, нажмите <span class="kbd">&uarr;</span>, чтобы вернуть последнюю команду, замените <code>l</code> на <code>rb</code> и нажмите <span class="kbd">Enter</span>. Параметры останутся такими же, как у только что проверенного поиска.</p></div>
+          <div class="habit reveal"><h4>Пользуйтесь короткими формами</h4>
             <table class="alias"><tbody>
               <tr><td><code>/co lookup</code></td><td><code>/co l</code></td></tr>
               <tr><td><code>/co rollback</code></td><td><code>/co rb</code></td></tr>
               <tr><td><code>/co restore</code></td><td><code>/co rs</code></td></tr>
               <tr><td><code>/co inspect</code></td><td><code>/co i</code></td></tr>
-              <tr><td>lookup, radius 5</td><td><code>/co near</code></td></tr>
+              <tr><td>поиск в радиусе 5</td><td><code>/co near</code></td></tr>
             </tbody></table>
           </div>
-          <div class="habit reveal"><h4>Stack time units</h4><p><code>t:2h30m</code>, <code>t:5d2h</code>, decimals like <code>t:1.5h</code>, or a window like <code>t:1h-2h</code> for between one and two hours ago.</p></div>
-          <div class="habit reveal"><h4>Count before you read</h4><p>Add <code>#count</code> to see how many rows match. Page with <code>/co l 2</code>, or show 20 lines a page with <code>/co l 1:20</code>.</p></div>
-          <div class="habit reveal"><h4>Click instead of flying</h4><p>On recent versions the coordinates in lookup results are clickable and teleport you there. That needs <code>coreprotect.teleport</code>.</p></div>
-          <div class="habit reveal"><h4>Select the exact area</h4><p>With WorldEdit, <code>r:#we</code> limits a command to your selection. Big rollback? <code>#silent</code> keeps chat short.</p></div>
+          <div class="habit reveal"><h4>Складывайте единицы времени</h4><p><code>t:2h30m</code>, <code>t:5d2h</code>, дроби вроде <code>t:1.5h</code> или окно <code>t:1h-2h</code>, то есть от одного до двух часов назад.</p></div>
+          <div class="habit reveal"><h4>Сначала посчитайте, потом читайте</h4><p>Добавьте <code>#count</code>, чтобы узнать число найденных строк. Листайте страницы через <code>/co l 2</code>, а 20 строк на страницу даст <code>/co l 1:20</code>.</p></div>
+          <div class="habit reveal"><h4>Кликайте вместо полётов</h4><p>В новых версиях координаты в результатах поиска кликабельны и телепортируют на место. Для этого нужно право <code>coreprotect.teleport</code>.</p></div>
+          <div class="habit reveal"><h4>Выделяйте точную область</h4><p>С WorldEdit <code>r:#we</code> ограничивает команду вашим выделением. Большой откат? <code>#silent</code> сократит вывод в чат.</p></div>
         </div>
       </div>
     </div>
@@ -616,19 +617,19 @@ img{max-width:100%}
   <section id="lab" class="section band">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Radius lab</p>
-        <h2>See what a rollback reaches</h2>
-        <p>You are standing at the stash. Change the parts of the command and watch what CoreProtect would revert. The radius is measured along x and z from where you stand, so the area is a square.</p>
+        <p class="eyebrow">Лаборатория радиуса</p>
+        <h2>До чего дотягивается откат</h2>
+        <p>Вы стоите у тайника. Меняйте части команды и смотрите, что откатит CoreProtect. Радиус отсчитывается по x и z от вашей позиции, поэтому область квадратная.</p>
       </header>
       <div class="lab">
         <div>
-          <div class="map"><canvas id="labMap" role="img" aria-label="Top-down map of the area around the stash, showing which places the rollback would reach"></canvas></div>
-          <p class="map-cap">Top-down map, one square per block. Outlines show what the current command would revert.</p>
+          <div class="map"><canvas id="labMap" role="img" aria-label="Карта местности вокруг тайника сверху: видно, до каких мест дотянется откат"></canvas></div>
+          <p class="map-cap">Вид сверху, одна клетка равна одному блоку. Обводка показывает, что откатит текущая команда.</p>
         </div>
         <div class="controls">
-          <div class="cmds"><div class="cmdline"><code id="labCmd"></code><button class="copy" type="button">Copy</button></div></div>
-          <label class="switch" for="lab-u"><input type="checkbox" id="lab-u" checked><span class="knob" aria-hidden="true"></span><span>u:<span data-name="thief">xVex</span><small>Only the suspect's actions</small></span></label>
-          <fieldset class="ctl"><legend>Radius (r:)</legend>
+          <div class="cmds"><div class="cmdline"><code id="labCmd"></code><button class="copy" type="button">Копировать</button></div></div>
+          <label class="switch" for="lab-u"><input type="checkbox" id="lab-u" checked><span class="knob" aria-hidden="true"></span><span>u:<span data-name="thief">xVex</span><small>Только действия подозреваемого</small></span></label>
+          <fieldset class="ctl"><legend>Радиус (r:)</legend>
             <div class="seg">
               <label><input type="radio" name="lab-r" value="5"><span>r:5</span></label>
               <label><input type="radio" name="lab-r" value="10" checked><span>r:10</span></label>
@@ -636,17 +637,17 @@ img{max-width:100%}
               <label><input type="radio" name="lab-r" value="global"><span>r:#global</span></label>
             </div>
           </fieldset>
-          <fieldset class="ctl"><legend>Action (a:)</legend>
+          <fieldset class="ctl"><legend>Действие (a:)</legend>
             <div class="seg">
               <label><input type="radio" name="lab-a" value="container" checked><span>a:+container</span></label>
-              <label><input type="radio" name="lab-a" value="all"><span>no a: (everything)</span></label>
+              <label><input type="radio" name="lab-a" value="all"><span>без a: (всё)</span></label>
             </div>
           </fieldset>
           <div class="verdict" id="labVerdict" aria-live="polite"></div>
           <ul class="readout" id="labReadout"></ul>
           <div class="lab-actions">
-            <button class="btn sm" type="button" id="labMistake">Show the classic mistake</button>
-            <button class="btn sm" type="button" id="labReset">Back to the safe command</button>
+            <button class="btn sm" type="button" id="labMistake">Показать типичную ошибку</button>
+            <button class="btn sm" type="button" id="labReset">Вернуть безопасную команду</button>
           </div>
         </div>
       </div>
@@ -656,13 +657,13 @@ img{max-width:100%}
   <section id="builder" class="section">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Command builder</p>
-        <h2>Build it, read it, copy it</h2>
-        <p>Fill in the parts. The builder writes the command, says in plain words what it will do, and flags anything that reaches further than you probably meant.</p>
+        <p class="eyebrow">Конструктор команд</p>
+        <h2>Соберите, прочитайте, скопируйте</h2>
+        <p>Заполните части команды. Конструктор соберёт её, простыми словами объяснит, что она сделает, и предупредит, если она захватывает больше, чем вы, скорее всего, хотели.</p>
       </header>
       <div class="builder">
         <form class="bform" id="bform" autocomplete="off">
-          <fieldset class="ctl"><legend>Command</legend>
+          <fieldset class="ctl"><legend>Команда</legend>
             <div class="seg">
               <label><input type="radio" name="b-cmd" value="lookup"><span>lookup</span></label>
               <label><input type="radio" name="b-cmd" value="rollback" checked><span>rollback</span></label>
@@ -670,23 +671,23 @@ img{max-width:100%}
               <label><input type="radio" name="b-cmd" value="purge"><span>purge</span></label>
             </div>
           </fieldset>
-          <label class="switch" for="b-short"><input type="checkbox" id="b-short" checked><span class="knob" aria-hidden="true"></span><span>Short aliases<small>/co l, /co rb, /co rs</small></span></label>
+          <label class="switch" for="b-short"><input type="checkbox" id="b-short" checked><span class="knob" aria-hidden="true"></span><span>Короткие алиасы<small>/co l, /co rb, /co rs</small></span></label>
           <div class="bgrid">
-            <div class="field" data-for="u"><label for="b-u">u: users</label><input id="b-u" value="xVex" spellcheck="false" placeholder="xVex or xVex,Pip"></div>
-            <div class="field" data-for="t"><label for="b-t">t: time</label><input id="b-t" value="2h" spellcheck="false" placeholder="2h, 5d2h, 1h-2h">
+            <div class="field" data-for="u"><label for="b-u">u: игроки</label><input id="b-u" value="xVex" spellcheck="false" placeholder="xVex или xVex,Pip"></div>
+            <div class="field" data-for="t"><label for="b-t">t: время</label><input id="b-t" value="2h" spellcheck="false" placeholder="2h, 5d2h, 1h-2h">
               <div class="chips"><button type="button" class="chip" data-set="b-t" data-v="15m">15m</button><button type="button" class="chip" data-set="b-t" data-v="1h">1h</button><button type="button" class="chip" data-set="b-t" data-v="2h">2h</button><button type="button" class="chip" data-set="b-t" data-v="1d">1d</button><button type="button" class="chip" data-set="b-t" data-v="30d">30d</button></div></div>
-            <div class="field" data-for="r"><label for="b-r">r: radius or area</label><input id="b-r" value="10" spellcheck="false" placeholder="10, #global, #we">
-              <div class="chips"><button type="button" class="chip" data-set="b-r" data-v="5">5</button><button type="button" class="chip" data-set="b-r" data-v="10">10</button><button type="button" class="chip" data-set="b-r" data-v="20">20</button><button type="button" class="chip" data-set="b-r" data-v="#global">#global</button><button type="button" class="chip" data-set="b-r" data-v="#we">#we</button><button type="button" class="chip" data-set="b-r" data-v="#world_nether">#world_nether</button><button type="button" class="chip" data-set="b-r" data-v="">none</button></div></div>
-            <div class="field" data-for="a"><label for="b-a">a: action</label><select id="b-a"></select></div>
-            <div class="field" data-for="i"><label for="b-i">i: include</label><input id="b-i" spellcheck="false" placeholder="diamond,netherite_chestplate"></div>
-            <div class="field" data-for="e"><label for="b-e">e: exclude</label><input id="b-e" spellcheck="false" placeholder="tnt"></div>
-            <div class="field" data-for="f"><label for="b-f">f: text filter</label><input id="b-f" spellcheck="false" placeholder="/ban,-/banlist"></div>
+            <div class="field" data-for="r"><label for="b-r">r: радиус или область</label><input id="b-r" value="10" spellcheck="false" placeholder="10, #global, #we">
+              <div class="chips"><button type="button" class="chip" data-set="b-r" data-v="5">5</button><button type="button" class="chip" data-set="b-r" data-v="10">10</button><button type="button" class="chip" data-set="b-r" data-v="20">20</button><button type="button" class="chip" data-set="b-r" data-v="#global">#global</button><button type="button" class="chip" data-set="b-r" data-v="#we">#we</button><button type="button" class="chip" data-set="b-r" data-v="#world_nether">#world_nether</button><button type="button" class="chip" data-set="b-r" data-v="">нет</button></div></div>
+            <div class="field" data-for="a"><label for="b-a">a: действие</label><select id="b-a"></select></div>
+            <div class="field" data-for="i"><label for="b-i">i: включить</label><input id="b-i" spellcheck="false" placeholder="diamond,netherite_chestplate"></div>
+            <div class="field" data-for="e"><label for="b-e">e: исключить</label><input id="b-e" spellcheck="false" placeholder="tnt"></div>
+            <div class="field" data-for="f"><label for="b-f">f: фильтр текста</label><input id="b-f" spellcheck="false" placeholder="/ban,-/banlist"></div>
           </div>
-          <fieldset class="ctl"><legend>Hashtags</legend><div class="tagbox" id="b-tags"></div></fieldset>
+          <fieldset class="ctl"><legend>Хэштеги</legend><div class="tagbox" id="b-tags"></div></fieldset>
         </form>
         <div class="bout">
-          <div class="cmdline"><code id="bCmd"></code><button class="copy" type="button">Copy</button></div>
-          <p class="explain"><span class="lbl">What it does</span><span id="bExplain"></span></p>
+          <div class="cmdline"><code id="bCmd"></code><button class="copy" type="button">Копировать</button></div>
+          <p class="explain"><span class="lbl">Что делает команда</span><span id="bExplain"></span></p>
           <ul class="checks" id="bChecks" aria-live="polite"></ul>
         </div>
       </div>
@@ -696,9 +697,9 @@ img{max-width:100%}
   <section id="commands" class="section band">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Reference</p>
-        <h2>Every /co command</h2>
-        <p>All commands from the official documentation, with their short forms and the permission node each one needs.</p>
+        <p class="eyebrow">Справочник</p>
+        <h2>Все команды /co</h2>
+        <p>Все команды из официальной документации, их короткие формы и право, которое нужно для каждой.</p>
       </header>
       <div class="cgrid" id="cgrid"></div>
     </div>
@@ -707,87 +708,87 @@ img{max-width:100%}
   <section id="params" class="section">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Reference</p>
-        <h2>Parameters</h2>
-        <p>lookup, rollback and restore take the same parameters. Most are optional. Click any example to copy it.</p>
+        <p class="eyebrow">Справочник</p>
+        <h2>Параметры</h2>
+        <p>У lookup, rollback и restore одинаковые параметры. Большинство из них необязательны. Нажмите на пример, чтобы скопировать его.</p>
       </header>
       <div class="params">
         <article class="param reveal">
-          <div class="key">u:<small>user</small></div>
-          <div class="param-desc"><h3>Who did it</h3><p>One player, or several separated by commas. Non-player causes are written with <code>#</code>.</p></div>
+          <div class="key">u:<small>игрок</small></div>
+          <div class="param-desc"><h3>Кто это сделал</h3><p>Один игрок или несколько через запятую. Неигровые причины пишутся с <code>#</code>.</p></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">u:xVex</button><span>One player</span></div>
-            <div class="exrow"><button class="xc" type="button">u:xVex,Pip</button><span>Two players</span></div>
-            <div class="exrow"><button class="xc" type="button">u:#fire,#tnt,#creeper,#explosion</button><span>Non-player causes, as shown in the docs</span></div>
+            <div class="exrow"><button class="xc" type="button">u:xVex</button><span>Один игрок</span></div>
+            <div class="exrow"><button class="xc" type="button">u:xVex,Pip</button><span>Два игрока</span></div>
+            <div class="exrow"><button class="xc" type="button">u:#fire,#tnt,#creeper,#explosion</button><span>Неигровые причины, как в документации</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">t:<small>time</small></div>
-          <div class="param-desc"><h3>How far back</h3><p>Weeks <code>w</code>, days <code>d</code>, hours <code>h</code>, minutes <code>m</code> and seconds <code>s</code>. Units combine, decimals work, and a dash gives a window.</p></div>
+          <div class="key">t:<small>время</small></div>
+          <div class="param-desc"><h3>Как далеко назад</h3><p>Недели <code>w</code>, дни <code>d</code>, часы <code>h</code>, минуты <code>m</code> и секунды <code>s</code>. Единицы можно сочетать, дроби работают, а дефис задаёт окно.</p></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">t:2w,5d,7h,2m,10s</button><span>Units combined with commas</span></div>
-            <div class="exrow"><button class="xc" type="button">t:5d2h</button><span>Units combined without commas</span></div>
-            <div class="exrow"><button class="xc" type="button">t:2.5h</button><span>Two and a half hours</span></div>
-            <div class="exrow"><button class="xc" type="button">t:1h-2h</button><span>Between one and two hours ago</span></div>
+            <div class="exrow"><button class="xc" type="button">t:2w,5d,7h,2m,10s</button><span>Единицы через запятую</span></div>
+            <div class="exrow"><button class="xc" type="button">t:5d2h</button><span>Единицы без запятых</span></div>
+            <div class="exrow"><button class="xc" type="button">t:2.5h</button><span>Два с половиной часа</span></div>
+            <div class="exrow"><button class="xc" type="button">t:1h-2h</button><span>От одного до двух часов назад</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">r:<small>radius</small></div>
-          <div class="param-desc"><h3>Where</h3><p>A number means that many blocks around you. Special values pick a world, the whole server or a WorldEdit selection.</p>
-            <ul><li>Rollback and restore default to <code>r:10</code> when you give no radius.</li><li>Lookups have no default radius and search everywhere.</li></ul></div>
+          <div class="key">r:<small>радиус</small></div>
+          <div class="param-desc"><h3>Где</h3><p>Число означает столько блоков вокруг вас. Особые значения выбирают мир, весь сервер или выделение WorldEdit.</p>
+            <ul><li>Откат и восстановление без радиуса используют <code>r:10</code>.</li><li>У поиска радиуса по умолчанию нет, он ищет везде.</li></ul></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">r:10</button><span>Within 10 blocks of you</span></div>
-            <div class="exrow"><button class="xc" type="button">r:#world_the_end</button><span>One world</span></div>
-            <div class="exrow"><button class="xc" type="button">r:#global</button><span>The entire server</span></div>
-            <div class="exrow"><button class="xc" type="button">r:#we</button><span>Your WorldEdit selection (also <code>r:#worldedit</code>)</span></div>
+            <div class="exrow"><button class="xc" type="button">r:10</button><span>В 10 блоках от вас</span></div>
+            <div class="exrow"><button class="xc" type="button">r:#world_the_end</button><span>Один мир</span></div>
+            <div class="exrow"><button class="xc" type="button">r:#global</button><span>Весь сервер</span></div>
+            <div class="exrow"><button class="xc" type="button">r:#we</button><span>Выделение WorldEdit (также <code>r:#worldedit</code>)</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">a:<small>action</small></div>
-          <div class="param-desc"><h3>What kind of action</h3><p>Limits the command to one type of logged action. <code>+</code> and <code>-</code> split most of them into the two directions, such as placed and broken. The full list of 22 is in the <a href="#actions">actions table</a>.</p></div>
+          <div class="key">a:<small>действие</small></div>
+          <div class="param-desc"><h3>Какой тип действия</h3><p>Ограничивает команду одним типом записанных действий. <code>+</code> и <code>-</code> делят большинство из них на два направления, например на установку и разрушение. Полный список из 22 действий в <a href="#actions">таблице действий</a>.</p></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">a:+block</button><span>Only blocks placed</span></div>
-            <div class="exrow"><button class="xc" type="button">a:-container</button><span>Only items taken out of containers</span></div>
-            <div class="exrow"><button class="xc" type="button">a:session</button><span>Logins and logouts</span></div>
+            <div class="exrow"><button class="xc" type="button">a:+block</button><span>Только установленные блоки</span></div>
+            <div class="exrow"><button class="xc" type="button">a:-container</button><span>Только предметы, взятые из контейнеров</span></div>
+            <div class="exrow"><button class="xc" type="button">a:session</button><span>Входы и выходы</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">i:<small>include</small></div>
-          <div class="param-desc"><h3>Only these things</h3><p>Blocks, items or entities, comma-separated. Names follow the lists at <a href="https://coreprotect.net/wiki-blocks" target="_blank" rel="noopener">coreprotect.net/wiki-blocks</a> and <a href="https://coreprotect.net/wiki-entities" target="_blank" rel="noopener">wiki-entities</a>.</p></div>
+          <div class="key">i:<small>включить</small></div>
+          <div class="param-desc"><h3>Только это</h3><p>Блоки, предметы или сущности через запятую. Названия берутся из списков на <a href="https://coreprotect.net/wiki-blocks" target="_blank" rel="noopener">coreprotect.net/wiki-blocks</a> и <a href="https://coreprotect.net/wiki-entities" target="_blank" rel="noopener">wiki-entities</a>.</p></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">i:stone</button><span>Only stone</span></div>
-            <div class="exrow"><button class="xc" type="button">i:diamond,netherite_chestplate</button><span>Several at once</span></div>
+            <div class="exrow"><button class="xc" type="button">i:stone</button><span>Только камень</span></div>
+            <div class="exrow"><button class="xc" type="button">i:diamond,netherite_chestplate</button><span>Несколько сразу</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">e:<small>exclude</small></div>
-          <div class="param-desc"><h3>Everything except</h3><p>Leaves out blocks, items, entities or users.</p></div>
+          <div class="key">e:<small>исключить</small></div>
+          <div class="param-desc"><h3>Всё, кроме</h3><p>Исключает блоки, предметы, сущности или игроков.</p></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">e:tnt</button><span>Skip TNT</span></div>
-            <div class="exrow"><button class="xc" type="button">e:stone,dirt</button><span>Skip stone and dirt</span></div>
+            <div class="exrow"><button class="xc" type="button">e:tnt</button><span>Без TNT</span></div>
+            <div class="exrow"><button class="xc" type="button">e:stone,dirt</button><span>Без камня и земли</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">f:<small>filter</small></div>
-          <div class="param-desc"><h3>Filter text by how it starts</h3><p>Works with <code>a:chat</code>, <code>a:command</code> and <code>a:sign</code>.</p>
-            <ul><li>Separate prefixes with commas. Any included prefix can match.</li><li>A leading <code>-</code> excludes, and exclusions work on their own.</li><li>Each prefix needs at least 3 characters, not counting the <code>-</code>.</li><li>Spaces are allowed. <code>*</code> <code>%</code> <code>_</code> <code>~</code> match literally.</li></ul></div>
+          <div class="key">f:<small>фильтр</small></div>
+          <div class="param-desc"><h3>Фильтр текста по началу</h3><p>Работает с <code>a:chat</code>, <code>a:command</code> и <code>a:sign</code>.</p>
+            <ul><li>Префиксы разделяются запятыми. Совпасть может любой из включённых.</li><li>Ведущий <code>-</code> исключает префикс, и исключения работают сами по себе.</li><li>Каждый префикс не короче 3 символов, не считая <code>-</code>.</li><li>Пробелы разрешены. <code>*</code> <code>%</code> <code>_</code> <code>~</code> сравниваются буквально.</li></ul></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">a:command f:/ban,/kick</button><span>Commands starting with either</span></div>
-            <div class="exrow"><button class="xc" type="button">a:command f:/ban,-/banlist</button><span>/ban, but not /banlist</span></div>
-            <div class="exrow"><button class="xc" type="button">a:chat f:-hello</button><span>Chat that does not start with "hello"</span></div>
-            <div class="exrow"><button class="xc" type="button">a:sign f:Diamond Shop,-Diamond Shop Closed</button><span>Sign text prefixes</span></div>
+            <div class="exrow"><button class="xc" type="button">a:command f:/ban,/kick</button><span>Команды, начинающиеся с любого из двух</span></div>
+            <div class="exrow"><button class="xc" type="button">a:command f:/ban,-/banlist</button><span>/ban, но не /banlist</span></div>
+            <div class="exrow"><button class="xc" type="button">a:chat f:-hello</button><span>Чат, который не начинается с «hello»</span></div>
+            <div class="exrow"><button class="xc" type="button">a:sign f:Diamond Shop,-Diamond Shop Closed</button><span>Начало текста табличек</span></div>
           </div>
         </article>
         <article class="param reveal">
-          <div class="key">#<small>hashtag</small></div>
-          <div class="param-desc"><h3>Extra behaviour</h3><p>Goes at the end of the command.</p></div>
+          <div class="key">#<small>хэштег</small></div>
+          <div class="param-desc"><h3>Дополнительное поведение</h3><p>Ставится в конце команды.</p></div>
           <div class="ex">
-            <div class="exrow"><button class="xc" type="button">#preview</button><span>Preview a rollback or restore (block changes)</span></div>
-            <div class="exrow"><button class="xc" type="button">#count</button><span>Number of rows a lookup finds</span></div>
-            <div class="exrow"><button class="xc" type="button">#summary</button><span>Row count plus material totals per player</span></div>
-            <div class="exrow"><button class="xc" type="button">#verbose</button><span>More detail during a rollback or restore</span></div>
-            <div class="exrow"><button class="xc" type="button">#silent</button><span>Minimal output during a rollback or restore</span></div>
-            <div class="exrow"><button class="xc" type="button">#optimize</button><span>Purge only. See <a href="#purge">Purge</a></span></div>
+            <div class="exrow"><button class="xc" type="button">#preview</button><span>Превью отката или восстановления (изменения блоков)</span></div>
+            <div class="exrow"><button class="xc" type="button">#count</button><span>Число строк, найденных поиском</span></div>
+            <div class="exrow"><button class="xc" type="button">#summary</button><span>Число строк и итоги по материалам для каждого игрока</span></div>
+            <div class="exrow"><button class="xc" type="button">#verbose</button><span>Больше подробностей при откате или восстановлении</span></div>
+            <div class="exrow"><button class="xc" type="button">#silent</button><span>Минимум вывода при откате или восстановлении</span></div>
+            <div class="exrow"><button class="xc" type="button">#optimize</button><span>Только для purge. См. раздел <a href="#purge">Очистка</a></span></div>
           </div>
         </article>
       </div>
@@ -797,17 +798,17 @@ img{max-width:100%}
   <section id="actions" class="section band">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Reference</p>
-        <h2>All 22 actions</h2>
-        <p>Every value <code>a:</code> accepts, the lookup permission that can block it, and which ones this case used.</p>
+        <p class="eyebrow">Справочник</p>
+        <h2>Все 22 действия</h2>
+        <p>Каждое значение <code>a:</code>, право поиска, которым его можно закрыть, и какие из них использовались в деле.</p>
       </header>
       <div class="atools">
-        <input class="search" id="aSearch" type="search" placeholder="Search actions, e.g. chest, login, sign" aria-label="Search actions">
-        <div class="filters" id="aFilters" role="group" aria-label="Filter actions by group"></div>
+        <input class="search" id="aSearch" type="search" placeholder="Поиск: сундук, вход, табличка" aria-label="Поиск действий">
+        <div class="filters" id="aFilters" role="group" aria-label="Фильтр действий по группам"></div>
       </div>
       <div class="tablewrap">
         <table>
-          <thead><tr><th scope="col">Action</th><th scope="col">What it covers</th><th scope="col">Can be blocked with</th><th scope="col">In the case</th></tr></thead>
+          <thead><tr><th scope="col">Действие</th><th scope="col">Что охватывает</th><th scope="col">Можно закрыть правом</th><th scope="col">В деле</th></tr></thead>
           <tbody id="aBody"></tbody>
         </table>
       </div>
@@ -817,57 +818,57 @@ img{max-width:100%}
   <section id="purge" class="section">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Reference</p>
-        <h2>Purge and database tools</h2>
-        <p>Purging deletes old log data for good. After a purge, lookups and rollbacks cannot reach that time any more, so keep enough history to investigate the cases you actually get.</p>
+        <p class="eyebrow">Справочник</p>
+        <h2>Очистка и база данных</h2>
+        <p>Очистка (purge) удаляет старые логи навсегда. После неё поиск и откат за это время уже не работают, поэтому храните историю достаточно долго для настоящих расследований.</p>
       </header>
       <div class="purge">
         <div class="purge-col">
-          <div class="cmds"><div class="cmdline"><code>/co purge t:&lt;time&gt; r:&lt;world/radius&gt; i:&lt;include&gt; e:&lt;exclude&gt; a:kill</code><button class="copy" type="button">Copy</button></div></div>
+          <div class="cmds"><div class="cmdline"><code>/co purge t:&lt;time&gt; r:&lt;world/radius&gt; i:&lt;include&gt; e:&lt;exclude&gt; a:kill</code><button class="copy" type="button">Копировать</button></div></div>
           <div class="limits">
-            <div class="limit reveal"><b>30 days</b><span>Youngest data you can purge in-game</span></div>
-            <div class="limit reveal"><b>24 hours</b><span>Youngest data you can purge from the console</span></div>
+            <div class="limit reveal"><b>30 дней</b><span>Минимальный возраст данных для очистки в игре</span></div>
+            <div class="limit reveal"><b>24 часа</b><span>Минимальный возраст данных для очистки из консоли</span></div>
           </div>
-          <h3>Common purges</h3>
+          <h3>Частые варианты очистки</h3>
           <div class="exlist" id="purgeList"></div>
-          <h3>Rules for radius purges</h3>
+          <h3>Правила очистки по радиусу</h3>
           <ul class="rulelist">
-            <li>Only block data and entity-kill data are affected, so combine the radius with <code>i:</code> or <code>a:kill</code>.</li>
-            <li>In-game only, and always in the world you are standing in. It cannot be combined with a world such as <code>r:#world_nether</code>.</li>
-            <li>Capped by <code>max-radius</code> in the config. <code>r:50x10</code> also limits height to 10 blocks above and below you.</li>
+            <li>Затрагиваются только данные блоков и убийств сущностей, поэтому сочетайте радиус с <code>i:</code> или <code>a:kill</code>.</li>
+            <li>Только в игре и всегда в том мире, где вы стоите. Нельзя сочетать с миром вроде <code>r:#world_nether</code>.</li>
+            <li>Ограничено параметром <code>max-radius</code> в конфиге. <code>r:50x10</code> ещё и ограничивает высоту: 10 блоков вверх и вниз от вас.</li>
           </ul>
-          <h3>Rules for kill purges</h3>
+          <h3>Правила очистки убийств</h3>
           <ul class="rulelist">
-            <li>Kill logs can be purged on their own on SQLite, MySQL and DuckDB. Removing a kill also removes the saved entity data a rollback would use to bring the mob back.</li>
-            <li><code>e:</code> only takes entity types. It cannot be combined with entity types in <code>i:</code>, or with only block types in <code>i:</code>.</li>
-            <li><code>a:kill</code> cannot be combined with block types in <code>i:</code>.</li>
+            <li>Логи убийств можно очищать отдельно на SQLite, MySQL и DuckDB. Вместе с убийством удаляются и сохранённые данные сущности, по которым откат вернул бы моба.</li>
+            <li><code>e:</code> принимает только типы сущностей. Его нельзя сочетать с сущностями в <code>i:</code> или только с блоками в <code>i:</code>.</li>
+            <li><code>a:kill</code> нельзя сочетать с типами блоков в <code>i:</code>.</li>
           </ul>
         </div>
         <div class="purge-col">
-          <h3>What #optimize does on each database</h3>
+          <h3>Что делает #optimize на каждой базе</h3>
           <div class="tablewrap">
             <table>
-              <thead><tr><th scope="col">Backend</th><th scope="col">Effect of #optimize</th></tr></thead>
+              <thead><tr><th scope="col">База</th><th scope="col">Эффект #optimize</th></tr></thead>
               <tbody>
-                <tr><td><b>SQLite</b></td><td>Not needed. A manual purge already rebuilds the file and frees the space.</td></tr>
-                <tr><td><b>MySQL</b></td><td>Also removes saved entity data in the purged range that no kill points to any more (needs the <code>CREATE TEMPORARY TABLES</code> privilege), then optimizes the tables to free space.</td></tr>
-                <tr><td><b>DuckDB</b></td><td>No extra effect. The purge runs in one transaction and checkpoints afterwards.</td></tr>
-                <tr><td><b>ClickHouse</b></td><td>Also runs <code>OPTIMIZE TABLE ... FINAL</code>. Plain time purges already drop whole monthly partitions.</td></tr>
+                <tr><td><b>SQLite</b></td><td>Не нужен. Ручная очистка и так пересобирает файл и освобождает место.</td></tr>
+                <tr><td><b>MySQL</b></td><td>Также удаляет сохранённые данные сущностей в очищенном диапазоне, на которые больше не ссылается ни одно убийство (нужна привилегия <code>CREATE TEMPORARY TABLES</code>), а затем оптимизирует таблицы и освобождает место.</td></tr>
+                <tr><td><b>DuckDB</b></td><td>Ничего не добавляет. Очистка идёт одной транзакцией, после неё делается чекпоинт.</td></tr>
+                <tr><td><b>ClickHouse</b></td><td>Также запускает <code>OPTIMIZE TABLE ... FINAL</code>. Обычная очистка по времени и так удаляет целые месячные партиции.</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="cap">#optimize arrived in v2.15. It can make MySQL and ClickHouse purges much slower and is usually unnecessary.</p>
+          <p class="cap">#optimize появился в v2.15. Он может сильно замедлить очистку на MySQL и ClickHouse и обычно не нужен.</p>
           <div class="mig reveal">
-            <h3>Moving to another database</h3>
-            <div class="cmdline"><code>/co migrate-db &lt;sqlite|mysql|duckdb|clickhouse&gt; [--full-validation]</code><button class="copy" type="button">Copy</button></div>
+            <h3>Переезд на другую базу</h3>
+            <div class="cmdline"><code>/co migrate-db &lt;sqlite|mysql|duckdb|clickhouse&gt; [--full-validation]</code><button class="copy" type="button">Копировать</button></div>
             <ul class="rulelist">
-              <li>Console only.</li>
-              <li>By default it checks all table statistics, samples about 1% of each large history table and fully compares small tables. <code>--full-validation</code> compares every copied row.</li>
-              <li>The target must hold no CoreProtect data, a DuckDB target must be a new file, and <code>database-lock</code> must stay enabled.</li>
-              <li>When it succeeds, <code>database-type</code> in config.yml is updated for you.</li>
-              <li>SQLite to MySQL and back needs a 23.0+ Patreon build. Anything involving DuckDB or ClickHouse needs 25.0+.</li>
+              <li>Только из консоли.</li>
+              <li>По умолчанию проверяет статистику всех таблиц, примерно 1% каждой большой таблицы истории и полностью сравнивает маленькие таблицы. <code>--full-validation</code> сравнивает каждую скопированную строку.</li>
+              <li>В целевой базе не должно быть данных CoreProtect, для DuckDB нужен новый файл, а <code>database-lock</code> должен оставаться включённым.</li>
+              <li>После успешного переноса <code>database-type</code> в config.yml обновится автоматически.</li>
+              <li>Перенос между SQLite и MySQL требует сборки 23.0+ с Patreon. Всё, что связано с DuckDB или ClickHouse, требует 25.0+.</li>
             </ul>
-            <p class="cap">Full steps: <a href="https://docs.coreprotect.net/database-migration/" target="_blank" rel="noopener">docs.coreprotect.net/database-migration</a></p>
+            <p class="cap">Полная инструкция: <a href="https://docs.coreprotect.net/database-migration/" target="_blank" rel="noopener">docs.coreprotect.net/database-migration</a></p>
           </div>
         </div>
       </div>
@@ -877,30 +878,30 @@ img{max-width:100%}
   <section id="perms" class="section band">
     <div class="wrap">
       <header class="sec-head">
-        <p class="eyebrow">Reference</p>
-        <h2>Permissions</h2>
-        <p>Every node defaults to operators except where noted. A sensible split keeps rollbacks with experienced staff and purges with the owner.</p>
+        <p class="eyebrow">Справочник</p>
+        <h2>Права</h2>
+        <p>Все права по умолчанию есть у операторов, кроме отмеченных. Разумное разделение: откаты у опытного персонала, очистка у владельца.</p>
       </header>
       <div class="perms">
         <div class="span2">
-          <h3>A staff setup that works</h3>
-          <p class="note">A suggestion, not part of the docs. Adjust it to your team.</p>
+          <h3>Рабочая схема для персонала</h3>
+          <p class="note">Это предложение, а не часть документации. Подстройте её под свою команду.</p>
           <div class="roles">
-            <div class="role reveal"><h4>Helper</h4><ul><li>coreprotect.inspect</li><li>coreprotect.lookup</li><li class="neg">coreprotect.lookup.chat = false</li><li class="neg">coreprotect.lookup.command = false</li></ul></div>
-            <div class="role reveal"><h4>Moderator</h4><ul><li>everything a helper has</li><li>coreprotect.rollback</li><li>coreprotect.restore</li><li>coreprotect.teleport</li></ul></div>
-            <div class="role reveal"><h4>Admin</h4><ul><li>coreprotect.*</li><li>includes purge, reload, consumer</li></ul></div>
+            <div class="role reveal"><h4>Хелпер</h4><ul><li>coreprotect.inspect</li><li>coreprotect.lookup</li><li class="neg">coreprotect.lookup.chat = false</li><li class="neg">coreprotect.lookup.command = false</li></ul></div>
+            <div class="role reveal"><h4>Модератор</h4><ul><li>всё, что есть у хелпера</li><li>coreprotect.rollback</li><li>coreprotect.restore</li><li>coreprotect.teleport</li></ul></div>
+            <div class="role reveal"><h4>Админ</h4><ul><li>coreprotect.*</li><li>включая purge, reload, consumer</li></ul></div>
           </div>
         </div>
         <div>
-          <h3>Base permissions</h3>
-          <div class="tablewrap"><table><thead><tr><th scope="col">Node</th><th scope="col">Default</th><th scope="col">Gives access to</th></tr></thead><tbody id="permBase"></tbody></table></div>
+          <h3>Основные права</h3>
+          <div class="tablewrap"><table><thead><tr><th scope="col">Право</th><th scope="col">По умолчанию</th><th scope="col">Даёт доступ к</th></tr></thead><tbody id="permBase"></tbody></table></div>
         </div>
         <div>
-          <h3>Lookup child permissions</h3>
-          <p class="note">Use them as negative permissions: set one to false to hide that kind of lookup. Not supported on CoreProtect for Hytale.</p>
-          <div class="tablewrap"><table><thead><tr><th scope="col">Node</th><th scope="col">Blocks</th></tr></thead><tbody id="permChild"></tbody></table></div>
-          <h3 style="margin-top:24px">Command names</h3>
-          <div class="tablewrap"><table><thead><tr><th scope="col">Node</th><th scope="col">Default</th><th scope="col">Command</th></tr></thead><tbody>
+          <h3>Дочерние права поиска</h3>
+          <p class="note">Используйте их как запрещающие: поставьте false, чтобы скрыть этот вид поиска. В CoreProtect для Hytale они не поддерживаются.</p>
+          <div class="tablewrap"><table><thead><tr><th scope="col">Право</th><th scope="col">Закрывает</th></tr></thead><tbody id="permChild"></tbody></table></div>
+          <h3 style="margin-top:24px">Имена команд</h3>
+          <div class="tablewrap"><table><thead><tr><th scope="col">Право</th><th scope="col">По умолчанию</th><th scope="col">Команда</th></tr></thead><tbody>
             <tr><td><code>coreprotect.co</code></td><td>true</td><td><code>/co</code></td></tr>
             <tr><td><code>coreprotect.core</code></td><td>false</td><td><code>/core</code></td></tr>
             <tr><td><code>coreprotect.coreprotect</code></td><td>false</td><td><code>/coreprotect</code></td></tr>
@@ -908,14 +909,14 @@ img{max-width:100%}
         </div>
       </div>
 
-      <h3 class="sub-h">Fine print in the official docs</h3>
+      <h3 class="sub-h">Неточности в официальной документации</h3>
       <ul class="fine">
-        <li><b>a:login vs a:session.</b> The docs' examples use <code>a:login</code>, but the action list has <code>a:session</code>, <code>a:+session</code> and <code>a:-session</code>. This guide sticks to the listed actions.</li>
-        <li><b>World names.</b> World targets appear as <code>r:#world_the_end</code>, <code>r:#world_nether</code>, <code>r:#nether</code> and <code>r:#world</code>. Test the name with a lookup on your server before a rollback.</li>
-        <li><b>/co near and /co undo</b> are listed as alias commands with no further syntax.</li>
-        <li><b>#optimize</b> is documented under purge, not in the hashtag list.</li>
-        <li><b>f: and hashtags</b> are missing from the lookup, rollback and restore syntax lines but are part of the shared parameter list.</li>
-        <li><b>Example output</b> on this page is illustrative. Exact wording and colours differ between CoreProtect versions.</li>
+        <li><b>a:login или a:session.</b> В примерах документации стоит <code>a:login</code>, но в списке действий есть только <code>a:session</code>, <code>a:+session</code> и <code>a:-session</code>. Это руководство придерживается списка.</li>
+        <li><b>Названия миров.</b> Миры записаны по-разному: <code>r:#world_the_end</code>, <code>r:#world_nether</code>, <code>r:#nether</code> и <code>r:#world</code>. Перед откатом проверьте название поиском на своём сервере.</li>
+        <li><b>/co near и /co undo</b> указаны как алиасы без описания синтаксиса.</li>
+        <li><b>#optimize</b> описан в разделе об очистке, а не в списке хэштегов.</li>
+        <li><b>f: и хэштеги</b> не указаны в строках синтаксиса lookup, rollback и restore, но входят в общий список параметров.</li>
+        <li><b>Пример вывода</b> на этой странице условный. Точные формулировки и цвета зависят от версии CoreProtect.</li>
       </ul>
     </div>
   </section>
@@ -923,8 +924,8 @@ img{max-width:100%}
 
 <footer>
   <div class="wrap">
-    <p>Built from the official <a href="https://docs.coreprotect.net/commands/" target="_blank" rel="noopener">commands</a> and <a href="https://docs.coreprotect.net/permissions/" target="_blank" rel="noopener">permissions</a> pages, read 24 October 2026.</p>
-    <p>An independent staff guide. Not affiliated with CoreProtect. <a href="https://github.com/magomedovex-code/coreprotect-casebook" target="_blank" rel="noopener">Source on GitHub</a></p>
+    <p>Собрано по официальным страницам <a href="https://docs.coreprotect.net/commands/" target="_blank" rel="noopener">commands</a> и <a href="https://docs.coreprotect.net/permissions/" target="_blank" rel="noopener">permissions</a>, прочитанным 24 октября 2026 года.</p>
+    <p>Независимое руководство для персонала. Не связано с CoreProtect. <a href="https://github.com/magomedovex-code/coreprotect-casebook" target="_blank" rel="noopener">Исходный код на GitHub</a></p>
   </div>
 </footer>
 
@@ -938,6 +939,8 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const plural = (n, f) => { const a = Math.abs(n) % 100, b = a % 10; return f[(a > 10 && a < 20) ? 2 : b === 1 ? 0 : (b >= 2 && b <= 4) ? 1 : 2]; };
+const COPY = "Копировать", COPIED = "Готово";
 
 /* ---------- Minecraft chat (&-codes) ---------- */
 function mc(s) {
@@ -974,7 +977,7 @@ const CASE = { thief: "xVex", victim: "Lumen", t: "2h" };
 const fill = s => s.replace(/\{thief\}/g, CASE.thief).replace(/\{victim\}/g, CASE.victim).replace(/\{t\}/g, CASE.t);
 const md = s => esc(fill(s)).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
 const mdEl = (tag, cls, tpl) => `<${tag}${cls ? ` class="${cls}"` : ""} data-md="${esc(tpl)}">${md(tpl)}</${tag}>`;
-const cmdEl = tpl => `<div class="cmdline"><code data-cmd="${esc(tpl)}">${hl(fill(tpl))}</code><button class="copy" type="button">Copy</button></div>`;
+const cmdEl = tpl => `<div class="cmdline"><code data-cmd="${esc(tpl)}">${hl(fill(tpl))}</code><button class="copy" type="button">${COPY}</button></div>`;
 const chatEl = lines => lines.map(l => `<div class="ln" data-mc="${esc(l)}">${mc(fill(l))}</div>`).join("");
 
 const HDR = "&3----- &fCoreProtect &7| &3Lookup Results &3-----";
@@ -998,46 +1001,46 @@ const report = (items, blocks) => [
 ];
 
 const STEPS = [
-  { ph: "A", title: "Find where the victim died",
-    stand: "Anywhere. Lookups search the whole server.",
+  { ph: "A", title: "Найдите место смерти",
+    stand: "Где угодно. Поиск идёт по всему серверу.",
     cmds: ["/co l u:{victim} a:-inventory t:{t}"],
-    body: ["When a player dies, CoreProtect logs every dropped stack as leaving their inventory (v20 and newer). Each line carries coordinates, and they all point at one spot: where {victim} died."],
-    parts: [["u:{victim}", "The victim. Death drops are logged under their name."], ["a:-inventory", "Only items that left their inventory."], ["t:{t}", "A window that covers the incident with margin."]],
-    note: ["info", "Write down **x-140 y68 z902**. On recent versions you can click the coordinates in chat to teleport there (needs `coreprotect.teleport`)."],
+    body: ["Когда игрок умирает, CoreProtect записывает каждую выпавшую стопку как предмет, покинувший инвентарь (версия 20 и новее). У каждой строки есть координаты, и все они указывают на одно место: место гибели {victim}."],
+    parts: [["u:{victim}", "Жертва. Выпадения при смерти записаны под её ником."], ["a:-inventory", "Только предметы, покинувшие инвентарь."], ["t:{t}", "Окно, которое с запасом захватывает происшествие."]],
+    note: ["info", "Запишите **x-140 y68 z902**. В новых версиях на координаты в чате можно нажать и телепортироваться (нужно право `coreprotect.teleport`)."],
     out: [HDR,
       "&743.12/m ago &f- &3{victim} &fremoved x1 &3netherite_chestplate&f.", AT_DEATH,
       "&743.12/m ago &f- &3{victim} &fremoved x1 &3diamond_sword&f.", AT_DEATH,
       "&743.12/m ago &f- &3{victim} &fremoved x18 &3diamond&f.", AT_DEATH,
       "&fPage 1/1"] },
-  { ph: "A", title: "See who picked the loot up",
-    stand: "On the death spot, x-140 y68 z902.",
+  { ph: "A", title: "Узнайте, кто подобрал лут",
+    stand: "На месте смерти, x-140 y68 z902.",
     cmds: ["/co l a:+item t:{t} r:5"],
-    body: ["There is no `u:` here on purpose. You don't know the culprit yet, and a lookup never changes the world, so a wide net costs nothing. `a:+item` lists items picked up by players."],
-    parts: [["a:+item", "Pickups and withdrawals only."], ["r:5", "Five blocks around the death spot."]],
-    also: ["/co l a:kill t:{t} r:5", "Current versions also log player deaths as kills, which can name the killer directly. If that comes back empty, the pickups still show who left with the loot."],
+    body: ["Здесь намеренно нет `u:`. Виновник ещё неизвестен, а поиск никогда не меняет мир, так что широкая выборка ничем не грозит. `a:+item` показывает предметы, которые подобрали игроки."],
+    parts: [["a:+item", "Только подборы и изъятия."], ["r:5", "Пять блоков вокруг места смерти."]],
+    also: ["/co l a:kill t:{t} r:5", "В новых версиях смерть игрока тоже записывается как убийство, и убийцу видно сразу. Если здесь пусто, подборы всё равно покажут, кто ушёл с лутом."],
     out: [HDR,
       "&742.48/m ago &f- &3{thief} &fpicked up x1 &3netherite_chestplate&f.", AT_DEATH,
       "&742.48/m ago &f- &3{thief} &fpicked up x1 &3diamond_sword&f.", AT_DEATH,
       "&742.47/m ago &f- &3{thief} &fpicked up x18 &3diamond&f.", AT_DEATH,
       "&fPage 1/1"] },
-  { ph: "A", title: "Follow the loot to the stash",
-    stand: "Anywhere.",
+  { ph: "A", title: "Проследите лут до тайника",
+    stand: "Где угодно.",
     cmds: ["/co l u:{thief} a:+container t:{t}"],
-    body: ["`a:+container` lists only items put into chests and other containers. Every deposit shows where that container is. Here, all of them lead to one buried chest."],
-    parts: [["u:{thief}", "Now you know who to follow."], ["a:+container", "Deposits only."]],
-    note: ["info", "Run it again with `t:7d` once you are done here. A player who dupes once has usually done it before."],
+    body: ["`a:+container` показывает только предметы, положенные в сундуки и другие контейнеры. У каждого вклада видно, где стоит контейнер. Здесь все они ведут к одному закопанному сундуку."],
+    parts: [["u:{thief}", "Теперь понятно, за кем следить."], ["a:+container", "Только то, что положили в контейнеры."]],
+    note: ["info", "Когда закончите, повторите поиск с `t:7d`. Кто дюпнул один раз, обычно делал это и раньше."],
     out: DEPOSITS },
-  { ph: "A", title: "Count what came in and what went out",
-    stand: "Anywhere.",
+  { ph: "A", title: "Сравните, сколько пришло и сколько ушло",
+    stand: "Где угодно.",
     cmds: ["/co l u:{thief} a:+item t:{t} #summary", "/co l u:{thief} a:-container t:{t} #summary", "/co l u:{thief} a:+container t:{t} #summary"],
-    body: ["`#summary` adds the row count and per-player material totals to a lookup. Put what came into {thief}'s hands (pickups, withdrawals from chests) next to what went out (deposits).",
-      "More out than in means the extra copies came from somewhere CoreProtect never logged. That gap is your dupe evidence. Take a screenshot before you change anything."],
+    body: ["`#summary` добавляет к поиску число строк и итоги по материалам для каждого игрока. Сравните, что попало в руки {thief} (подборы и изъятия из сундуков), с тем, что ушло (вклады).",
+      "Если ушло больше, чем пришло, лишние копии взялись оттуда, где CoreProtect ничего не записал. Эта разница и есть доказательство дюпа. Сделайте скриншот, прежде чем что-то менять."],
     side: "evidence" },
-  { ph: "A", title: "Read the stash chest itself",
-    stand: "Next to the stash at x-312 y41 z877.",
-    cmds: ["/co i", { do: "Right-click the chest." }, "/co i"],
-    body: ["The inspector shows a block's own history. On a container it lists every item added and removed, by anyone. You want to see one name here. If other players used this chest too, you find out before the rollback instead of after."],
-    note: ["warn", "The second `/co i` switches the inspector off. Do it before you start breaking or opening things."],
+  { ph: "A", title: "Проверьте сам сундук-тайник",
+    stand: "Рядом с тайником на x-312 y41 z877.",
+    cmds: ["/co i", { do: "Нажмите ПКМ по сундуку." }, "/co i"],
+    body: ["Инспектор показывает историю конкретного блока. Для контейнера это все добавления и изъятия, кто бы их ни сделал. Здесь вы хотите увидеть один ник. Если сундуком пользовались и другие, вы узнаете об этом до отката, а не после."],
+    note: ["warn", "Второй `/co i` выключает инспектор. Сделайте это, прежде чем что-то ломать или открывать."],
     out: ["&3----- &fCoreProtect &3----- &7(x-312/y41/z877)",
       "&722.81/m ago &f- &3{thief} &fadded x18 &3diamond&f.",
       "&723.40/m ago &f- &3{thief} &fadded x18 &3diamond&f.",
@@ -1045,36 +1048,36 @@ const STEPS = [
       "&732.06/m ago &f- &3{thief} &fadded x1 &3diamond_sword&f.",
       "&732.07/m ago &f- &3{thief} &fadded x1 &3netherite_chestplate&f.",
       "&fPage 1/1"] },
-  { ph: "B", title: "Dry-run the cleanup",
-    stand: "Next to the stash.",
+  { ph: "B", title: "Прогоните очистку вхолостую",
+    stand: "Рядом с тайником.",
     cmds: ["/co l u:{thief} t:{t} r:10 a:+container"],
-    body: ["This is the exact rollback you are about to run, with `l` in place of `rb`. Every line it prints is a line the rollback will undo. If anything here is not loot, tighten the parameters now."],
-    note: ["info", "`#preview` shows pending **block** changes before they happen. CoreProtect does not preview container or inventory transactions, so for chests this lookup is your preview."],
+    body: ["Это ровно тот откат, который вы сейчас запустите, только с `l` вместо `rb`. Каждую строку отсюда откат отменит. Если что-то из этого не лут, сузьте параметры сейчас."],
+    note: ["info", "`#preview` показывает будущие изменения **блоков** до их применения. Транзакции контейнеров и инвентаря CoreProtect не показывает в превью, поэтому для сундуков превью заменяет этот поиск."],
     out: DEPOSITS },
-  { ph: "B", title: "Roll back the stash deposits",
-    stand: "Next to the stash.",
+  { ph: "B", title: "Откатите вклады в тайник",
+    stand: "Рядом с тайником.",
     cmds: ["/co rb u:{thief} t:{t} r:10 a:+container"],
-    body: ["Rolling back a deposit takes the items back out of the chest. That includes the duped copies. A dupe can create items without a log entry, but putting them in a chest is logged like any other deposit."],
-    parts: [["u:{thief}", "Pip's chest is 6 blocks away. Without u:, Pip loses everything stored there in the last {t}."], ["t:{t}", "Only the incident window."], ["r:10", "Only this stash. {thief}'s chests elsewhere keep what was earned legitimately."], ["a:+container", "Only deposits. The chest block and the tunnel stay as they are."]],
-    note: ["danger", "Leave out `u:` and the rollback includes every player inside the radius. Try it in the radius lab below before you try it on a live server."],
+    body: ["Откат вклада забирает предметы обратно из сундука. Это касается и дюпнутых копий. Дюп может создать предметы без записи в логе, но то, что их положили в сундук, записывается как любой другой вклад."],
+    parts: [["u:{thief}", "Сундук Pip в 6 блоках отсюда. Без u: из него пропадёт всё, что туда положили за последние {t}."], ["t:{t}", "Только окно происшествия."], ["r:10", "Только этот тайник. Сундуки {thief} в других местах сохранят то, что добыто честно."], ["a:+container", "Только вклады. Сам сундук и подкоп остаются на месте."]],
+    note: ["danger", "Без `u:` откат захватит каждого игрока в радиусе. Попробуйте это в лаборатории радиуса ниже, а не на живом сервере."],
     out: report(56, 0) },
-  { ph: "B", title: "Catch the copies a rollback can't see",
-    stand: "Anywhere.",
+  { ph: "B", title: "Найдите копии, которые откат не видит",
+    stand: "Где угодно.",
     cmds: ["/clear {thief} minecraft:diamond"],
-    body: ["CoreProtect can only undo what it logged. Duped items still in {thief}'s inventory were never deposited, picked up or dropped, so no rollback will find them. The vanilla `/clear` command removes them.",
-      "To refill a tunnel dug to the stash, add `#preview` first: `/co rb u:{thief} t:{t} r:10 a:-block #preview`. CoreProtect then tells you how to apply or cancel it."],
+    body: ["CoreProtect может отменить только то, что записал. Дюпнутые предметы, которые всё ещё лежат в инвентаре {thief}, никуда не клали, не подбирали и не выбрасывали, поэтому откат их не найдёт. Их убирает ванильная команда `/clear`.",
+      "Чтобы засыпать подкоп к тайнику, сначала добавьте `#preview`: `/co rb u:{thief} t:{t} r:10 a:-block #preview`. Затем CoreProtect подскажет, как применить или отменить изменения."],
     side: "hunt" },
-  { ph: "C", title: "Give the victim their items back",
-    stand: "On the death spot, with {victim} online.",
+  { ph: "C", title: "Верните вещи жертве",
+    stand: "На месте смерти, пока {victim} в сети.",
     cmds: ["/co rb u:{victim} t:{t} r:5 a:-inventory"],
-    body: ["Rolling back the death drops puts the items back into {victim}'s inventory, whoever picked them up afterwards. Ask {victim} to free up some inventory space first."],
-    parts: [["u:{victim}", "Only the victim's own records."], ["r:5", "Only the death spot. Other drops of theirs in the window stay as they were."], ["a:-inventory", "Only items that left their inventory."]],
-    note: ["danger", "Remove first, return second. Run this before step 7 and the loot exists twice, once in the stash and once on {victim}. You would have duplicated it yourself."],
+    body: ["Откат выпадений при смерти возвращает предметы в инвентарь {victim}, кто бы их потом ни подобрал. Заранее попросите освободить место в инвентаре."],
+    parts: [["u:{victim}", "Только записи самой жертвы."], ["r:5", "Только место смерти. Другие выпадения этого игрока за это время останутся как были."], ["a:-inventory", "Только предметы, покинувшие инвентарь."]],
+    note: ["danger", "Сначала забрать, потом вернуть. Если выполнить это до шага 7, лут будет существовать дважды: в тайнике и у {victim}. Вы бы сами его продюпали."],
     out: report(20, 0) },
-  { ph: "C", title: "Verify, and keep /co undo in reach",
-    stand: "Next to the stash.",
+  { ph: "C", title: "Проверьте результат и держите /co undo под рукой",
+    stand: "Рядом с тайником.",
     cmds: ["/co l u:{thief} t:{t} r:10 a:+container", "/co undo"],
-    body: ["Run the lookup again. Entries you rolled back now show with a line through them. If a rollback took something it should not have, `/co undo` reverses it with the opposite action."],
+    body: ["Запустите поиск ещё раз. Откаченные записи теперь показаны зачёркнутыми. Если откат забрал лишнее, `/co undo` вернёт всё обратным действием."],
     out: [HDR,
       "&7&m32.07/m ago &f&m- &3&m{thief} &f&madded x1 &3&mnetherite_chestplate&f.", AT_STASH,
       "&7&m32.06/m ago &f&m- &3&m{thief} &f&madded x1 &3&mdiamond_sword&f.", AT_STASH,
@@ -1089,23 +1092,23 @@ const REPLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentC
 
 function evidenceEl() {
   return `<div class="evidence" data-play>
-    ${mdEl("p", "ev-title", "Diamonds through {thief}'s hands in the last {t}")}
-    <div class="ev-row"><span>Came in</span><div class="bar"><i class="b-in" style="width:33.33%"></i></div><b>18</b></div>
-    <p class="ev-sub">18 picked up (step 2) + 0 withdrawn from chests</p>
-    <div class="ev-row"><span>Went out</span><div class="bar"><i class="b-in" style="width:33.33%"></i><i class="b-bad" style="width:66.67%"></i></div><b>54</b></div>
-    <p class="ev-sub">54 deposited into the stash (step 3)</p>
+    ${mdEl("p", "ev-title", "Алмазы через руки {thief} за последние {t}")}
+    <div class="ev-row"><span>Пришло</span><div class="bar"><i class="b-in" style="width:33.33%"></i></div><b>18</b></div>
+    <p class="ev-sub">18 подобрано (шаг 2) + 0 взято из сундуков</p>
+    <div class="ev-row"><span>Ушло</span><div class="bar"><i class="b-in" style="width:33.33%"></i><i class="b-bad" style="width:66.67%"></i></div><b>54</b></div>
+    <p class="ev-sub">54 положено в тайник (шаг 3)</p>
     <div class="axis"><span></span><div><span style="left:0">0</span><span style="left:33.33%">18</span><span style="left:66.67%">36</span><span style="left:100%">54</span></div><span></span></div>
-    <div class="ev-key"><span><i class="b-in"></i>accounted for</span><span><i class="b-bad"></i>no logged source</span></div>
-    <div class="ev-verdict"><strong>36</strong><span>diamonds went into the chest that never came from anywhere CoreProtect saw. That is the dupe.</span></div>
+    <div class="ev-key"><span><i class="b-in"></i>учтено</span><span><i class="b-bad"></i>источник не записан</span></div>
+    <div class="ev-verdict"><strong>36</strong><span>алмазов попали в сундук ниоткуда, если судить по логам CoreProtect. Это и есть дюп.</span></div>
   </div>
-  <p class="cap">Totals as the three #summary lookups would add them up for this case.</p>`;
+  <p class="cap">Итоги, которые дадут три поиска с #summary в этом деле.</p>`;
 }
 function huntEl() {
   return `<div class="hunt">
-    <p class="hunt-title">Other places loot ends up</p>
-    <div class="hunt-row"><span>Dropped for a friend or an alt account</span>${cmdEl("/co l u:{thief} a:-item t:{t}")}</div>
-    <div class="hunt-row"><span>Then, standing where it was dropped, who picked it up</span>${cmdEl("/co l a:+item t:{t} r:5")}</div>
-    <div class="hunt-row"><span>Older stashes from earlier sessions</span>${cmdEl("/co l u:{thief} a:+container t:7d")}</div>
+    <p class="hunt-title">Куда ещё уходит лут</p>
+    <div class="hunt-row"><span>Выброшено для друга или твинка</span>${cmdEl("/co l u:{thief} a:-item t:{t}")}</div>
+    <div class="hunt-row"><span>Затем, стоя там, где выбросили: кто подобрал</span>${cmdEl("/co l a:+item t:{t} r:5")}</div>
+    <div class="hunt-row"><span>Старые тайники с прошлых заходов</span>${cmdEl("/co l u:{thief} a:+container t:7d")}</div>
   </div>`;
 }
 
@@ -1113,13 +1116,13 @@ function stepEl(s, n) {
   const kind = s.ph === "B" ? " w" : s.ph === "C" ? " r" : "";
   const cmds = s.cmds.map(c => typeof c === "string" ? cmdEl(c) : mdEl("p", "do", c.do)).join("");
   const parts = s.parts ? `<dl class="parts">${s.parts.map(([k, v]) => `<div>${mdEl("dt", "", k)}${mdEl("dd", "", v)}</div>`).join("")}</dl>` : "";
-  const label = { info: "Tip", warn: "Heads up", danger: "Careful" };
+  const label = { info: "Совет", warn: "Внимание", danger: "Осторожно" };
   const note = s.note ? `<div class="callout ${s.note[0]}"><span class="lv">${label[s.note[0]]}</span>${mdEl("span", "", s.note[1])}</div>` : "";
-  const also = s.also ? `<div class="also"><p><strong>Also try:</strong></p>${cmdEl(s.also[0])}${mdEl("p", "", s.also[1])}</div>` : "";
+  const also = s.also ? `<div class="also"><p><strong>Ещё попробуйте:</strong></p>${cmdEl(s.also[0])}${mdEl("p", "", s.also[1])}</div>` : "";
   let side = "";
   if (s.side === "evidence") side = evidenceEl();
   else if (s.side === "hunt") side = huntEl();
-  else if (s.out) side = `<div class="panel"><div class="panel-bar"><span>in-game chat &middot; illustrative</span><button class="replay" type="button">${REPLAY}Replay</button></div><div class="panel-body">${chatEl(s.out)}</div></div>`;
+  else if (s.out) side = `<div class="panel"><div class="panel-bar"><span>игровой чат &middot; пример</span><button class="replay" type="button">${REPLAY}Повтор</button></div><div class="panel-body">${chatEl(s.out)}</div></div>`;
   return `<article class="step${kind}" id="step-${n}">
     <div class="step-text">
       <div class="step-head"><span class="step-n">${String(n).padStart(2, "0")}</span><div><h4>${esc(s.title)}</h4>${mdEl("p", "stand", s.stand)}</div></div>
@@ -1133,20 +1136,19 @@ function stepEl(s, n) {
 const phases = { A: [], B: [], C: [] };
 STEPS.forEach((s, i) => phases[s.ph].push(stepEl(s, i + 1)));
 for (const k in phases) $("#phase-" + k).innerHTML = phases[k].join("");
-// pin icon before the "stand" line
 $$(".stand").forEach(p => p.insertAdjacentHTML("afterbegin", PIN));
 
 /* run sheet */
 $("#runlist").innerHTML = STEPS.map((s, i) => {
   const cmds = s.cmds.map(c => typeof c === "string" ? cmdEl(c) : mdEl("p", "do", c.do)).join("");
-  return `<li class="run"><input type="checkbox" id="run-${i}" aria-label="Mark step ${i + 1} done"><div><label class="run-meta" for="run-${i}"><b>${i + 1}. ${esc(s.title)}</b> &middot; <span data-md="${esc(s.stand)}">${md(s.stand)}</span></label><div class="cmds">${cmds}</div></div></li>`;
+  return `<li class="run"><input type="checkbox" id="run-${i}" aria-label="Отметить шаг ${i + 1} как выполненный"><div><label class="run-meta" for="run-${i}"><b>${i + 1}. ${esc(s.title)}</b> &middot; <span data-md="${esc(s.stand)}">${md(s.stand)}</span></label><div class="cmds">${cmds}</div></div></li>`;
 }).join("");
 $("#runlist").addEventListener("change", e => {
   if (e.target.matches("input[type=checkbox]")) e.target.closest(".run").classList.toggle("done", e.target.checked);
 });
-$("#copyAll").addEventListener("click", e => {
+$("#copyAll").addEventListener("click", () => {
   const text = STEPS.flatMap(s => s.cmds.filter(c => typeof c === "string").map(fill)).join("\n");
-  copyText(text, null, "Copied all " + text.split("\n").length + " commands");
+  copyText(text, null, "Скопировано команд: " + text.split("\n").length);
 });
 
 /* ---------- refresh bound text ---------- */
@@ -1177,8 +1179,8 @@ function toast(msg) {
 }
 function copyText(text, btn, msg) {
   const done = ok => {
-    toast(ok ? (msg || "Copied " + (text.length > 52 ? text.slice(0, 52) + "\u2026" : text)) : "Copy is blocked here. Select the command and copy it by hand.");
-    if (ok && btn) { btn.classList.add("done"); btn.textContent = "Copied"; setTimeout(() => { btn.classList.remove("done"); btn.textContent = "Copy"; }, 1400); }
+    toast(ok ? (msg || "Скопировано: " + (text.length > 52 ? text.slice(0, 52) + "\u2026" : text)) : "Копирование здесь заблокировано. Выделите команду и скопируйте её вручную.");
+    if (ok && btn) { btn.classList.add("done"); btn.textContent = COPIED; setTimeout(() => { btn.classList.remove("done"); btn.textContent = COPY; }, 1400); }
   };
   const fallback = () => {
     let ok = false;
@@ -1311,15 +1313,16 @@ if (!reduce) heroLoop();
 /* ---------- radius lab ---------- */
 const LAB = { u: true, r: "10", a: "container", rCur: 10, vis: false, bg: null, tk: null };
 const N = 23;
+const UNITS = { items: ["предмет", "предмета", "предметов"], blocks: ["блок", "блока", "блоков"], rows: ["запись", "записи", "записей"] };
 const LOBJ = [
-  { id: "stash", who: "thief", pt: [1, 0], box: [1, 0, 1, 1], rows: { container: 56 }, role: "target", name: "Stash chest", dt: "stolen gear and 54 diamonds", unit: "items", sw: "#9a6a35", label: "Stash" },
-  { id: "tunnel", who: "thief", pt: [1, 1], box: [1, 1, 3, 3], rows: { block: 14 }, role: "fine", name: "Tunnel to the stash", dt: "refilled if blocks are included", unit: "blocks", sw: "#3b2f25" },
-  { id: "pipc", who: "Pip", pt: [7, -4], box: [7, -4, 1, 1], rows: { container: 40 }, role: "coll", name: "Pip's chest", dt: "Pip's own loot", unit: "items", sw: "#9a6a35", label: "Pip's chest" },
-  { id: "piph", who: "Pip", pt: [8, -7], box: [8, -10, 5, 4], rows: { block: 86 }, role: "coll", name: "Pip's house", dt: "built this evening", unit: "blocks", sw: "#b98b52", label: "Pip's house" },
-  { id: "base", who: "thief", pt: [17, 12], box: [16, 11, 3, 3], rows: { container: 31 }, role: "coll", name: "Suspect's base chest", dt: "items earned legitimately", unit: "items", sw: "#8d8f8a", label: "Base chest" },
-  { id: "farm", who: "Ari", pt: [-15, 9], box: [-17, 8, 5, 3], rows: { block: 64 }, role: "coll", name: "Ari's wheat farm", dt: "planted an hour ago", unit: "blocks", sw: "#6e8f2f", label: "Ari's farm" },
-  { id: "else", who: "thief", global: true, rows: { container: 22, block: 208 }, role: "coll", name: "Suspect, elsewhere", dt: "everything else they did on the server", unit: "rows", sw: "#5a6b68" },
-  { id: "all", who: "others", global: true, rows: { container: 610, block: 4202 }, role: "coll", name: "23 other players", dt: "the rest of the server", unit: "rows", sw: "#5a6b68" }
+  { id: "stash", who: "thief", pt: [1, 0], box: [1, 0, 1, 1], rows: { container: 56 }, role: "target", name: "Сундук-тайник", dt: "краденое снаряжение и 54 алмаза", unit: "items", sw: "#9a6a35", label: "Тайник" },
+  { id: "tunnel", who: "thief", pt: [1, 1], box: [1, 1, 3, 3], rows: { block: 14 }, role: "fine", name: "Подкоп к тайнику", dt: "засыплется, если включить блоки", unit: "blocks", sw: "#3b2f25" },
+  { id: "pipc", who: "Pip", pt: [7, -4], box: [7, -4, 1, 1], rows: { container: 40 }, role: "coll", name: "Сундук Pip", dt: "собственный лут Pip", unit: "items", sw: "#9a6a35", label: "Сундук Pip" },
+  { id: "piph", who: "Pip", pt: [8, -7], box: [8, -10, 5, 4], rows: { block: 86 }, role: "coll", name: "Дом Pip", dt: "построен этим вечером", unit: "blocks", sw: "#b98b52", label: "Дом Pip" },
+  { id: "base", who: "thief", pt: [17, 12], box: [16, 11, 3, 3], rows: { container: 31 }, role: "coll", name: "Сундук на базе {thief}", dt: "вещи, добытые честно", unit: "items", sw: "#8d8f8a", label: "Сундук базы" },
+  { id: "farm", who: "Ari", pt: [-15, 9], box: [-17, 8, 5, 3], rows: { block: 64 }, role: "coll", name: "Пшеничная ферма Ari", dt: "посажена час назад", unit: "blocks", sw: "#6e8f2f", label: "Ферма Ari" },
+  { id: "else", who: "thief", global: true, rows: { container: 22, block: 208 }, role: "coll", name: "{thief} в других местах", dt: "всё остальное, что игрок делал на сервере", unit: "rows", sw: "#5a6b68" },
+  { id: "all", who: "others", global: true, rows: { container: 610, block: 4202 }, role: "coll", name: "23 других игрока", dt: "весь остальной сервер", unit: "rows", sw: "#5a6b68" }
 ];
 function labEval() {
   return LOBJ.map(o => {
@@ -1335,12 +1338,11 @@ function labUpdate() {
   if (!$("#labReadout")) return;
   const res = labEval();
   $("#labCmd").innerHTML = hl(labCmd());
-  const pills = { target: ["target", "intended"], fine: ["fine", "fine"], coll: ["coll", "collateral"] };
+  const pills = { target: ["target", "цель"], fine: ["fine", "допустимо"], coll: ["coll", "лишнее"] };
   $("#labReadout").innerHTML = res.map(({ o, hit, rows }) => {
-    const p = hit ? pills[o.role] : ["none", "untouched"];
-    const nm = o.name.replace("Suspect", CASE.thief);
-    const amount = hit ? `${rows} ${o.unit}` : "";
-    return `<li class="${hit && o.role === "coll" ? "hit-coll" : ""}"><span class="sw" style="background:${o.sw}"></span><div><div class="nm">${esc(nm)}${amount ? ` <span class="dt">&middot; ${amount}</span>` : ""}</div><div class="dt">${esc(o.dt)}</div></div><span class="pill ${p[0]}">${p[1]}</span></li>`;
+    const p = hit ? pills[o.role] : ["none", "не тронуто"];
+    const amount = hit ? `${rows.toLocaleString("ru-RU")} ${plural(rows, UNITS[o.unit])}` : "";
+    return `<li class="${hit && o.role === "coll" ? "hit-coll" : ""}"><span class="sw" style="background:${o.sw}"></span><div><div class="nm">${esc(fill(o.name))}${amount ? ` <span class="dt">&middot; ${amount}</span>` : ""}</div><div class="dt">${esc(o.dt)}</div></div><span class="pill ${p[0]}">${p[1]}</span></li>`;
   }).join("");
   const coll = res.filter(x => x.hit && x.o.role === "coll");
   const stash = res.find(x => x.o.id === "stash").hit;
@@ -1348,13 +1350,13 @@ function labUpdate() {
   if (coll.length) {
     const rows = coll.reduce((a, x) => a + x.rows, 0);
     v.className = "verdict bad";
-    v.innerHTML = `<strong>Collateral: ${rows.toLocaleString("en-US")} ${rows === 1 ? "record" : "records"} in ${coll.length} ${coll.length === 1 ? "place" : "places"} that had nothing to do with the robbery.</strong><span>${LAB.u ? "Shrink the radius so it only covers the stash." : "Add u: so only the suspect's actions are reverted."}</span>`;
+    v.innerHTML = `<strong>Лишнее: ${rows.toLocaleString("ru-RU")} ${plural(rows, UNITS.rows)} в ${coll.length} ${plural(coll.length, ["месте", "местах", "местах"])}, не связанных с ограблением.</strong><span>${LAB.u ? "Уменьшите радиус, чтобы он покрывал только тайник." : "Добавьте u:, чтобы откатывались только действия подозреваемого."}</span>`;
   } else if (stash) {
     v.className = "verdict clean";
-    v.innerHTML = `<strong>Clean. Only the stash is touched.</strong><span>Everyone else's chests and builds keep their last ${esc(CASE.t)} of activity.</span>`;
+    v.innerHTML = `<strong>Чисто. Затронут только тайник.</strong><span>Сундуки и постройки остальных игроков сохранят последние ${esc(CASE.t)} активности.</span>`;
   } else {
     v.className = "verdict bad";
-    v.innerHTML = "<strong>The stash is out of reach.</strong><span>Stand next to it or widen the radius.</span>";
+    v.innerHTML = "<strong>Тайник вне досягаемости.</strong><span>Встаньте рядом с ним или увеличьте радиус.</span>";
   }
   if (reduce || !LAB.vis) labDraw(performance.now());
 }
@@ -1420,17 +1422,16 @@ function labDraw(now) {
       ctx.fillText(o.label, lx + 5 * dpr, ly + th / 2 + 0.5);
     }
   }
-  // the admin, standing at the stash
   const [hx, hy] = [N * c, N * c];
   ctx.fillStyle = "#c8a17a"; ctx.fillRect(hx + c * 0.1, hy + c * 0.1, c * 0.8, c * 0.8);
   ctx.fillStyle = "#3a2a1e"; ctx.fillRect(hx + c * 0.1, hy + c * 0.1, c * 0.8, c * 0.28);
   ctx.fillStyle = "#2d4f8a"; ctx.fillRect(hx + c * 0.25, hy + c * 0.48, c * 0.14, c * 0.12); ctx.fillRect(hx + c * 0.61, hy + c * 0.48, c * 0.14, c * 0.12);
   ctx.strokeStyle = T.accent; ctx.lineWidth = 2 * dpr; ctx.strokeRect(hx - dpr, hy - dpr, c + 2 * dpr, c + 2 * dpr);
-  const youW = ctx.measureText("You").width + 10 * dpr, th = 18 * dpr, ly = hy + c + 5 * dpr;
+  const youW = ctx.measureText("Вы").width + 10 * dpr, th = 18 * dpr, ly = hy + c + 5 * dpr;
   ctx.fillStyle = T.accent; ctx.fillRect(hx + c / 2 - youW / 2, ly, youW, th);
-  ctx.fillStyle = T.surface; ctx.fillText("You", hx + c / 2 - youW / 2 + 5 * dpr, ly + th / 2 + 0.5);
+  ctx.fillStyle = T.surface; ctx.fillText("Вы", hx + c / 2 - youW / 2 + 5 * dpr, ly + th / 2 + 0.5);
   if (LAB.r === "global") {
-    const msg = "r:#global reaches the whole server";
+    const msg = "r:#global захватывает весь сервер";
     const mw = ctx.measureText(msg).width + 14 * dpr;
     ctx.fillStyle = T.danger; ctx.fillRect(8 * dpr, 8 * dpr, mw, 22 * dpr);
     ctx.fillStyle = T.surface; ctx.fillText(msg, 15 * dpr, 19 * dpr);
@@ -1457,27 +1458,27 @@ if (!reduce) requestAnimationFrame(labLoop);
 
 /* ---------- builder ---------- */
 const ACTIONS = [
-  ["block", "Blocks placed or broken", "blocks"], ["+block", "Blocks placed", "blocks"], ["-block", "Blocks broken", "blocks"],
-  ["chat", "Chat messages", "text"], ["click", "Player interactions", "other"], ["command", "Commands players used", "text"],
-  ["container", "Items put into or taken out of containers", "containers"], ["+container", "Items put into containers", "containers"], ["-container", "Items taken out of containers", "containers"],
-  ["inventory", "Items added to or removed from player inventories", "inventory"], ["+inventory", "Items added to player inventories", "inventory"], ["-inventory", "Items removed from player inventories, including death drops", "inventory"],
-  ["item", "Items dropped, thrown, picked up, deposited or withdrawn", "items"], ["+item", "Items picked up or withdrawn", "items"], ["-item", "Items dropped, thrown or deposited", "items"],
-  ["kill", "Mobs and animals killed", "other"], ["spawn", "Entities placed or spawned by players", "other"],
-  ["session", "Logins and logouts", "sessions"], ["+session", "Logins", "sessions"], ["-session", "Logouts", "sessions"],
-  ["sign", "Text written on signs", "text"], ["username", "Username changes", "other"]
+  ["block", "Установленные или сломанные блоки", "blocks", "блок ставить ломать"], ["+block", "Установленные блоки", "blocks", "блок ставить постройка"], ["-block", "Сломанные блоки", "blocks", "блок ломать гриф"],
+  ["chat", "Сообщения в чате", "text", "чат сообщение"], ["click", "Взаимодействия игроков", "other", "клик дверь кнопка рычаг"], ["command", "Команды, которые вводили игроки", "text", "команда"],
+  ["container", "Предметы, положенные в контейнеры или взятые из них", "containers", "сундук бочка шалкер контейнер"], ["+container", "Предметы, положенные в контейнеры", "containers", "сундук бочка шалкер положить"], ["-container", "Предметы, взятые из контейнеров", "containers", "сундук бочка шалкер взять кража"],
+  ["inventory", "Предметы, добавленные в инвентарь игрока или убранные из него", "inventory", "инвентарь"], ["+inventory", "Предметы, добавленные в инвентарь", "inventory", "инвентарь"], ["-inventory", "Предметы, убранные из инвентаря, включая выпадение при смерти", "inventory", "инвентарь смерть"],
+  ["item", "Предметы выброшенные, брошенные, подобранные, положенные или взятые", "items", "предмет выбросить подобрать"], ["+item", "Подобранные или взятые предметы", "items", "предмет подобрать"], ["-item", "Выброшенные, брошенные или положенные предметы", "items", "предмет выбросить"],
+  ["kill", "Убитые мобы и животные", "other", "убийство моб животное"], ["spawn", "Сущности, поставленные или призванные игроками", "other", "спавн призыв сущность"],
+  ["session", "Входы и выходы", "sessions", "вход выход логин сессия"], ["+session", "Входы", "sessions", "вход логин"], ["-session", "Выходы", "sessions", "выход"],
+  ["sign", "Текст на табличках", "text", "табличка надпись"], ["username", "Смены ника", "other", "ник имя"]
 ];
-const PHRASE = { "": "all logged actions", block: "blocks placed or broken", "+block": "blocks placed", "-block": "blocks broken", chat: "chat messages", click: "player interactions", command: "commands", container: "items put into or taken out of containers", "+container": "items put into containers", "-container": "items taken out of containers", inventory: "inventory changes", "+inventory": "items added to inventories", "-inventory": "items removed from inventories", item: "item drops, pickups, deposits and withdrawals", "+item": "items picked up or withdrawn", "-item": "items dropped, thrown or deposited", kill: "mob and animal kills", spawn: "entities spawned by players", session: "logins and logouts", "+session": "logins", "-session": "logouts", sign: "sign text", username: "username changes" };
+const PHRASE = { "": "все записанные действия", block: "установку и разрушение блоков", "+block": "установку блоков", "-block": "разрушение блоков", chat: "сообщения в чате", click: "взаимодействия игроков", command: "введённые команды", container: "вклады в контейнеры и изъятия из них", "+container": "предметы, положенные в контейнеры", "-container": "предметы, взятые из контейнеров", inventory: "изменения инвентаря", "+inventory": "предметы, добавленные в инвентарь", "-inventory": "предметы, убранные из инвентаря", item: "выбрасывание, подбор, вклады и изъятия предметов", "+item": "подобранные или взятые предметы", "-item": "выброшенные или положенные предметы", kill: "убийства мобов и животных", spawn: "сущности, призванные игроками", session: "входы и выходы", "+session": "входы", "-session": "выходы", sign: "текст табличек", username: "смены ника" };
 const TAGS = {
-  lookup: [["#count", "Row count only"], ["#summary", "Count plus totals per player"]],
-  rollback: [["#preview", "Preview block changes"], ["#verbose", "More detail"], ["#silent", "Minimal output"]],
-  restore: [["#preview", "Preview block changes"], ["#verbose", "More detail"], ["#silent", "Minimal output"]],
-  purge: [["#optimize", "Also optimize tables"]]
+  lookup: [["#count", "Только число строк"], ["#summary", "Число строк и итоги по игрокам"]],
+  rollback: [["#preview", "Превью изменений блоков"], ["#verbose", "Больше подробностей"], ["#silent", "Минимум вывода"]],
+  restore: [["#preview", "Превью изменений блоков"], ["#verbose", "Больше подробностей"], ["#silent", "Минимум вывода"]],
+  purge: [["#optimize", "Ещё и оптимизировать таблицы"]]
 };
 const B = { cmd: "rollback", tags: new Set() };
 let lastTokens = [];
 function fillActions() {
   const sel = $("#b-a"), keep = sel.value;
-  const list = B.cmd === "purge" ? [["", "(none)"], ["kill", "kill"]] : [["", "(none, all actions)"]].concat(ACTIONS.map(a => [a[0], a[0]]));
+  const list = B.cmd === "purge" ? [["", "(нет)"], ["kill", "kill"]] : [["", "(нет, все действия)"]].concat(ACTIONS.map(a => [a[0], a[0]]));
   sel.innerHTML = list.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
   sel.value = list.some(l => l[0] === keep) ? keep : "";
 }
@@ -1517,61 +1518,60 @@ function buildCmd() {
 }
 function where() {
   const r = B.r;
-  if (!r) return B.cmd === "lookup" ? "anywhere on the server" : B.cmd === "purge" ? "in every world" : "within 10 blocks of you (the default)";
-  if (/^\d+(x\d+)?$/.test(r)) { const [h, y] = r.split("x"); return `within ${h} blocks of you${y ? `, ${y} blocks up and down` : ""}`; }
-  if (r === "#global") return "anywhere on the server";
-  if (r === "#we" || r === "#worldedit") return "inside your WorldEdit selection";
-  if (r.startsWith("#")) return `in the world ${r.slice(1)}`;
-  return `in "${r}"`;
+  if (!r) return B.cmd === "lookup" ? "по всему серверу" : B.cmd === "purge" ? "во всех мирах" : "в радиусе 10 блоков от вас (по умолчанию)";
+  if (/^\d+(x\d+)?$/.test(r)) { const [h, y] = r.split("x"); return `в радиусе ${h} ${plural(+h, ["блока", "блоков", "блоков"])} от вас${y ? `, ${y} вверх и вниз` : ""}`; }
+  if (r === "#global") return "по всему серверу";
+  if (r === "#we" || r === "#worldedit") return "внутри вашего выделения WorldEdit";
+  if (r.startsWith("#")) return `в мире ${r.slice(1)}`;
+  return `в «${r}»`;
 }
 function explain() {
   const list = s => s.split(",").filter(Boolean).join(", ");
   if (B.cmd === "purge") {
-    const what = B.a === "kill" ? "entity-kill records" : B.i ? "records of " + list(B.i) : "all logged data";
-    return `Permanently deletes ${what} older than ${B.t || "(no time given)"} ${where()}${B.e ? `, keeping ${list(B.e)}` : ""}.`;
+    const what = B.a === "kill" ? "записи об убийствах сущностей" : B.i ? "записи для " + list(B.i) : "все записанные данные";
+    return `Безвозвратно удаляет ${what} старше ${B.t || "(время не указано)"}. Где: ${where()}.${B.e ? ` Кроме: ${list(B.e)}.` : ""}`;
   }
-  const verb = { lookup: "Lists", rollback: "Reverts", restore: "Re-applies" }[B.cmd];
-  const by = B.u ? `by ${list(B.u)}` : "by anyone";
-  let when = "from any time";
-  if (B.t) { const [a, b] = B.t.split("-"); when = b ? `from between ${a} and ${b} ago` : `from the last ${a}`; }
-  let s = `${verb} ${PHRASE[B.a] || "all logged actions"} ${by} ${when}, ${where()}`;
-  if (B.i) s += `, only ${list(B.i)}`;
-  if (B.e) s += `, skipping ${list(B.e)}`;
-  if (B.f) s += `, where the text matches ${B.f}`;
-  if (B.tags.has("#preview")) s += ". Shows a preview first";
-  if (B.tags.has("#count")) s += ". Returns only the row count";
-  if (B.tags.has("#summary")) s += ". Adds totals per player";
-  return s + ".";
+  const verb = { lookup: "Показывает", rollback: "Откатывает", restore: "Восстанавливает" }[B.cmd];
+  let when = "за всё время";
+  if (B.t) { const [a, b] = B.t.split("-"); when = b ? `от ${a} до ${b} назад` : `за последние ${a}`; }
+  let s = `${verb} ${PHRASE[B.a] || PHRASE[""]}. Кто: ${B.u ? list(B.u) : "любой игрок"}. Когда: ${when}. Где: ${where()}.`;
+  if (B.i) s += ` Только: ${list(B.i)}.`;
+  if (B.e) s += ` Кроме: ${list(B.e)}.`;
+  if (B.f) s += ` Фильтр текста: ${B.f}.`;
+  if (B.tags.has("#preview")) s += " Сначала покажет превью.";
+  if (B.tags.has("#count")) s += " Вернёт только число строк.";
+  if (B.tags.has("#summary")) s += " Добавит итоги по игрокам.";
+  return s;
 }
 function checks() {
   const W = [], write = B.cmd === "rollback" || B.cmd === "restore";
   if (write) {
-    if (!B.u && B.r === "#global") W.push(["danger", "No u: with r:#global. This reverts every player on the whole server inside the time window."]);
-    else if (!B.u) W.push(["warn", "No u: means every player in the area is included. Add u: unless you really mean everyone."]);
-    if (!B.r) W.push(["info", "No r: given, so CoreProtect applies the default radius of 10 blocks around you."]);
-    else if (B.r === "#global" && B.u) W.push(["info", "r:#global with u: reverts that player everywhere. Fine for a griefer, too much for a single incident."]);
-    if (!B.t) W.push(["warn", "No t: given. Add a time window so you only touch the incident."]);
-    if (B.tags.has("#preview") && /container|inventory|item/.test(B.a)) W.push(["warn", "CoreProtect previews block changes only. For container, inventory and item actions, run the same command as a lookup instead."]);
-    if (B.tags.has("#verbose") && B.tags.has("#silent")) W.push(["info", "#verbose and #silent pull in opposite directions. Pick one."]);
+    if (!B.u && B.r === "#global") W.push(["danger", "Нет u:, а r:#global. Это откатит всех игроков на всём сервере в пределах окна времени."]);
+    else if (!B.u) W.push(["warn", "Без u: в откат попадает каждый игрок в области. Добавьте u:, если вы не имеете в виду действительно всех."]);
+    if (!B.r) W.push(["info", "Не указан r:, поэтому CoreProtect возьмёт радиус по умолчанию: 10 блоков вокруг вас."]);
+    else if (B.r === "#global" && B.u) W.push(["info", "r:#global вместе с u: откатит этого игрока везде. Для грифера подходит, для одного случая это слишком."]);
+    if (!B.t) W.push(["warn", "Не указан t:. Добавьте окно времени, чтобы затронуть только происшествие."]);
+    if (B.tags.has("#preview") && /container|inventory|item/.test(B.a)) W.push(["warn", "CoreProtect показывает превью только для блоков. Для контейнеров, инвентаря и предметов запустите ту же команду как поиск."]);
+    if (B.tags.has("#verbose") && B.tags.has("#silent")) W.push(["info", "#verbose и #silent противоречат друг другу. Выберите что-то одно."]);
   }
-  if (B.cmd === "lookup" && !B.r) W.push(["info", "No r: given. Lookups search the whole server by default."]);
+  if (B.cmd === "lookup" && !B.r) W.push(["info", "Не указан r:. Поиск по умолчанию идёт по всему серверу."]);
   if (B.cmd !== "purge" && B.f) {
-    if (!/^(chat|command|sign)$/.test(B.a)) W.push(["warn", "f: only filters a:chat, a:command or a:sign. Pick one of those actions."]);
+    if (!/^(chat|command|sign)$/.test(B.a)) W.push(["warn", "f: фильтрует только a:chat, a:command или a:sign. Выберите одно из этих действий."]);
     const short = B.f.split(",").map(s => s.trim().replace(/^-/, "")).filter(s => s.length && s.length < 3);
-    if (short.length) W.push(["warn", "Each f: prefix needs at least 3 characters, not counting a leading -: " + short.join(", ")]);
+    if (short.length) W.push(["warn", "Каждый префикс f: должен быть не короче 3 символов, не считая ведущего -: " + short.join(", ")]);
   }
   if (B.cmd === "purge") {
     const secs = parseT(B.t);
-    if (!B.t) W.push(["danger", "Purge needs t:. It deletes data older than that age."]);
-    else if (secs !== null && secs < 86400) W.push(["danger", "Under 24 hours. Even the console refuses a purge this young."]);
-    else if (secs !== null && secs < 30 * 86400) W.push(["warn", "In-game, purge only accepts data older than 30 days. From the console the floor is 24 hours."]);
-    if (/^\d/.test(B.r) && !B.i && B.a !== "kill") W.push(["warn", "A purge radius only covers block and entity-kill data, so pair it with i: or a:kill. It works in-game only."]);
-    if (B.tags.has("#optimize")) W.push(["info", "#optimize matters on MySQL and ClickHouse and can slow the purge a lot. SQLite and DuckDB gain nothing from it."]);
-    W.push(["warn", "Purged data is gone for good. Lookups and rollbacks can no longer reach it."]);
+    if (!B.t) W.push(["danger", "Для purge нужен t:. Удаляются данные старше этого возраста."]);
+    else if (secs !== null && secs < 86400) W.push(["danger", "Меньше 24 часов. Такую очистку не примет даже консоль."]);
+    else if (secs !== null && secs < 30 * 86400) W.push(["warn", "В игре purge принимает только данные старше 30 дней. Из консоли порог 24 часа."]);
+    if (/^\d/.test(B.r) && !B.i && B.a !== "kill") W.push(["warn", "Радиус в purge касается только блоков и убийств сущностей, поэтому добавьте i: или a:kill. Работает только в игре."]);
+    if (B.tags.has("#optimize")) W.push(["info", "#optimize имеет смысл на MySQL и ClickHouse и может сильно замедлить очистку. SQLite и DuckDB от него ничего не получают."]);
+    W.push(["warn", "Удалённые данные пропадают навсегда. Поиск и откат до них больше не дотянутся."]);
   }
   if (!W.some(w => w[0] === "danger" || w[0] === "warn")) {
     const scoped = write && B.u && B.t && B.r;
-    W.unshift(["ok", scoped ? "Scoped: it names who, when and where." : "Looks good."]);
+    W.unshift(["ok", scoped ? "Команда ограничена: указаны кто, когда и где." : "Всё в порядке."]);
   }
   return W;
 }
@@ -1579,13 +1579,13 @@ function renderB() {
   readB();
   const cmd = buildCmd();
   const toks = cmd.split(" ");
-  $("#bCmd").innerHTML = toks.map((t, i) => {
+  $("#bCmd").innerHTML = toks.map(t => {
     const h = tokHTML(t);
     return (lastTokens.length && !lastTokens.includes(t)) ? `<span class="tok-pop">${h}</span>` : h;
   }).join(" ");
   lastTokens = toks;
   $("#bExplain").textContent = explain();
-  const lv = { ok: "Good", info: "Note", warn: "Check", danger: "Danger" };
+  const lv = { ok: "Хорошо", info: "Заметка", warn: "Проверьте", danger: "Опасно" };
   $("#bChecks").innerHTML = checks().map(([l, t]) => `<li class="${l}"><span class="lv">${lv[l]}</span><span>${esc(t)}</span></li>`).join("");
   const purge = B.cmd === "purge";
   $$(".bgrid .field").forEach(f => { f.hidden = purge && (f.dataset.for === "u" || f.dataset.for === "f"); });
@@ -1605,21 +1605,21 @@ fillActions(); $("#b-a").value = "+container"; fillTags(); renderB();
 
 /* ---------- reference: commands ---------- */
 const COMMANDS = [
-  { c: "lookup", al: "/co l", syn: "/co lookup u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>", d: "Searches the logs. Nearly every parameter is optional. With no r: it searches the whole server.", p: "coreprotect.lookup", x: "Pages: /co l <page>, lines per page: /co l <page>:<lines>" },
-  { c: "rollback", al: "/co rb", syn: "/co rollback u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>", d: "Reverts logged actions. Same parameters as lookup. With no r: it uses a radius of 10 around you.", p: "coreprotect.rollback" },
-  { c: "restore", al: "/co rs", syn: "/co restore u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>", d: "Re-applies logged actions. Undoes a rollback, or puts player actions back. Same parameters as lookup.", p: "coreprotect.restore" },
-  { c: "inspect", al: "/co i", syn: "/co inspect", d: "Toggles the inspector. While it is on, clicking a block shows its history. Run it again to turn it off.", p: "coreprotect.inspect" },
-  { c: "near", tag: "alias", syn: "/co near", d: "A lookup with a radius of 5 around you.", p: "coreprotect.lookup, blocked by coreprotect.lookup.near" },
-  { c: "undo", tag: "alias", syn: "/co undo", d: "Reverses a rollback or restore by running the opposite action.", p: "No separate node listed" },
-  { c: "purge", syn: "/co purge t:<time> r:<world/radius> i:<include> e:<exclude> a:kill", d: "Deletes old log data to free disk space. In-game only data older than 30 days; from the console, older than 24 hours.", p: "coreprotect.purge", red: true },
-  { c: "help", syn: "/co help", d: "Lists the available commands in chat.", p: "coreprotect.help" },
-  { c: "status", syn: "/co status", d: "Shows the plugin status and version.", p: "coreprotect.status" },
-  { c: "reload", syn: "/co reload", d: "Reloads the configuration file.", p: "coreprotect.reload" },
-  { c: "consumer", tag: "console", syn: "/co consumer", d: "Pauses or resumes processing of the consumer queue.", p: "coreprotect.consumer" },
-  { c: "migrate-db", tag: "console only", syn: "/co migrate-db <sqlite|mysql|duckdb|clickhouse> [--full-validation]", d: "Moves your data to a different database backend. Details under Purge and database tools.", p: "No node listed" }
+  { c: "lookup", al: "/co l", syn: "/co lookup u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>", d: "Ищет по логам. Почти все параметры необязательны. Без r: ищет по всему серверу.", p: "coreprotect.lookup", x: "Страницы: /co l <страница>, строк на страницу: /co l <страница>:<строки>" },
+  { c: "rollback", al: "/co rb", syn: "/co rollback u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>", d: "Откатывает записанные действия. Параметры те же, что у lookup. Без r: использует радиус 10 вокруг вас.", p: "coreprotect.rollback" },
+  { c: "restore", al: "/co rs", syn: "/co restore u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>", d: "Заново применяет записанные действия. Отменяет откат или возвращает действия игроков. Параметры те же, что у lookup.", p: "coreprotect.restore" },
+  { c: "inspect", al: "/co i", syn: "/co inspect", d: "Включает инспектор. Пока он включён, нажатие на блок показывает его историю. Повторный запуск выключает его.", p: "coreprotect.inspect" },
+  { c: "near", tag: "алиас", syn: "/co near", d: "Поиск в радиусе 5 вокруг вас.", p: "coreprotect.lookup, закрывается через coreprotect.lookup.near" },
+  { c: "undo", tag: "алиас", syn: "/co undo", d: "Отменяет откат или восстановление, выполняя обратное действие.", p: "Отдельное право не указано" },
+  { c: "purge", syn: "/co purge t:<time> r:<world/radius> i:<include> e:<exclude> a:kill", d: "Удаляет старые логи, чтобы освободить место на диске. В игре только данные старше 30 дней, из консоли старше 24 часов.", p: "coreprotect.purge", red: true },
+  { c: "help", syn: "/co help", d: "Показывает список команд в чате.", p: "coreprotect.help" },
+  { c: "status", syn: "/co status", d: "Показывает состояние плагина и его версию.", p: "coreprotect.status" },
+  { c: "reload", syn: "/co reload", d: "Перезагружает файл конфигурации.", p: "coreprotect.reload" },
+  { c: "consumer", tag: "консоль", syn: "/co consumer", d: "Ставит на паузу или возобновляет обработку очереди записи (consumer).", p: "coreprotect.consumer" },
+  { c: "migrate-db", tag: "только консоль", syn: "/co migrate-db <sqlite|mysql|duckdb|clickhouse> [--full-validation]", d: "Переносит данные на другую базу данных. Подробности в разделе об очистке и базе данных.", p: "Право не указано" }
 ];
 $("#cgrid").innerHTML = COMMANDS.map(k => `<article class="ccard reveal">
-  <div class="ccard-h"><h3>/co ${esc(k.c)}</h3>${k.al ? `<span class="badge">${esc(k.al)}</span>` : ""}${k.tag ? `<span class="badge muted">${esc(k.tag)}</span>` : ""}${k.red ? '<span class="badge red">deletes data</span>' : ""}</div>
+  <div class="ccard-h"><h3>/co ${esc(k.c)}</h3>${k.al ? `<span class="badge">${esc(k.al)}</span>` : ""}${k.tag ? `<span class="badge muted">${esc(k.tag)}</span>` : ""}${k.red ? '<span class="badge red">удаляет данные</span>' : ""}</div>
   <p>${esc(k.d)}</p>
   <div class="syn">${esc(k.syn)}</div>
   ${k.x ? `<p class="perm">${esc(k.x)}</p>` : ""}
@@ -1627,17 +1627,17 @@ $("#cgrid").innerHTML = COMMANDS.map(k => `<article class="ccard reveal">
 </article>`).join("");
 
 /* ---------- reference: actions ---------- */
-const USED = { "-inventory": "steps 1, 9", "+item": "steps 2, 4", "+container": "steps 3, 4, 6, 7", "-container": "step 4", kill: "step 2", "-block": "step 8", "-item": "step 8" };
-const GROUPS = [["all", "All"], ["blocks", "Blocks"], ["containers", "Containers"], ["inventory", "Inventory"], ["items", "Items"], ["sessions", "Sessions"], ["text", "Chat, commands, signs"], ["other", "Other"]];
+const USED = { "-inventory": "шаги 1, 9", "+item": "шаги 2, 4", "+container": "шаги 3, 4, 6, 7", "-container": "шаг 4", kill: "шаг 2", "-block": "шаг 8", "-item": "шаг 8" };
+const GROUPS = [["all", "Все"], ["blocks", "Блоки"], ["containers", "Контейнеры"], ["inventory", "Инвентарь"], ["items", "Предметы"], ["sessions", "Сессии"], ["text", "Чат, команды, таблички"], ["other", "Другое"]];
 let aGroup = "all";
 $("#aFilters").innerHTML = GROUPS.map(([k, l]) => `<button type="button" data-g="${k}" aria-pressed="${k === "all"}">${l}</button>`).join("");
 function renderActions() {
   const q = $("#aSearch").value.trim().toLowerCase();
-  const rows = ACTIONS.filter(([a, d, g]) => (aGroup === "all" || g === aGroup) && (!q || (a + " " + d + " " + g).toLowerCase().includes(q)));
+  const rows = ACTIONS.filter(([a, d, g, kw]) => (aGroup === "all" || g === aGroup) && (!q || (a + " " + d + " " + kw).toLowerCase().includes(q)));
   $("#aBody").innerHTML = rows.length ? rows.map(([a, d]) => {
     const base = a.replace(/^[+-]/, "");
     return `<tr><td><code>a:${esc(a)}</code></td><td>${esc(d)}</td><td><code>coreprotect.lookup.${esc(base)}</code></td><td>${USED[a] ? `<span class="used">${USED[a]}</span>` : ""}</td></tr>`;
-  }).join("") : `<tr class="empty-row"><td colspan="4">No action matches "${esc(q)}". Try chest, block or login.</td></tr>`;
+  }).join("") : `<tr class="empty-row"><td colspan="4">Ничего не найдено по запросу «${esc(q)}». Попробуйте: сундук, блок или вход.</td></tr>`;
 }
 $("#aSearch").addEventListener("input", renderActions);
 $("#aFilters").addEventListener("click", e => {
@@ -1650,25 +1650,25 @@ renderActions();
 
 /* ---------- reference: purge + permissions ---------- */
 const PURGES = [
-  ["/co purge t:30d", "Keep the last 30 days, delete everything older."],
-  ["/co purge t:30d r:#world_nether", "The same, for one world only (v19+)."],
-  ["/co purge t:30d i:stone,dirt", "Only stone and dirt records (v23+)."],
-  ["/co purge t:30d a:kill", "Only entity-kill records. Everything else stays."],
-  ["/co purge t:30d i:zombie,skeleton", "Only kills of these mobs. Entity and block types can share i:."],
-  ["/co purge t:30d e:villager,wolf", "Everything older than 30 days, except villager and wolf kills."],
-  ["/co purge t:30d r:50 i:zombie", "Zombie kills within 50 blocks of you."],
-  ["/co purge t:30d #optimize", "Purge, then optimize the tables where the database supports it."]
+  ["/co purge t:30d", "Оставить последние 30 дней, всё старше удалить."],
+  ["/co purge t:30d r:#world_nether", "То же самое, но только для одного мира (v19+)."],
+  ["/co purge t:30d i:stone,dirt", "Только записи о камне и земле (v23+)."],
+  ["/co purge t:30d a:kill", "Только записи об убийствах сущностей. Остальное остаётся."],
+  ["/co purge t:30d i:zombie,skeleton", "Только убийства этих мобов. Сущности и блоки можно указывать вместе в i:."],
+  ["/co purge t:30d e:villager,wolf", "Всё старше 30 дней, кроме убийств жителей и волков."],
+  ["/co purge t:30d r:50 i:zombie", "Убийства зомби в 50 блоках от вас."],
+  ["/co purge t:30d #optimize", "Очистить, затем оптимизировать таблицы, если база это поддерживает."]
 ];
-$("#purgeList").innerHTML = PURGES.map(([c, d]) => `<div class="row"><div class="cmdline"><code>${hl(c)}</code><button class="copy" type="button">Copy</button></div><span>${esc(d)}</span></div>`).join("");
+$("#purgeList").innerHTML = PURGES.map(([c, d]) => `<div class="row"><div class="cmdline"><code>${hl(c)}</code><button class="copy" type="button">${COPY}</button></div><span>${esc(d)}</span></div>`).join("");
 const PERM_BASE = [
-  ["coreprotect.*", "op", "All CoreProtect commands"], ["coreprotect.inspect", "op", "/co inspect"], ["coreprotect.lookup", "op", "/co lookup"],
-  ["coreprotect.rollback", "op", "/co rollback"], ["coreprotect.restore", "op", "/co restore"], ["coreprotect.teleport", "op", "Teleporting from results"],
+  ["coreprotect.*", "op", "Все команды CoreProtect"], ["coreprotect.inspect", "op", "/co inspect"], ["coreprotect.lookup", "op", "/co lookup"],
+  ["coreprotect.rollback", "op", "/co rollback"], ["coreprotect.restore", "op", "/co restore"], ["coreprotect.teleport", "op", "Телепорт из результатов поиска"],
   ["coreprotect.help", "op", "/co help"], ["coreprotect.purge", "op", "/co purge"], ["coreprotect.reload", "op", "/co reload"],
-  ["coreprotect.status", "op", "/co status"], ["coreprotect.consumer", "op", "/co consumer"], ["coreprotect.give", "false", "The give command"],
-  ["coreprotect.networking", "op", "The networking API"]
+  ["coreprotect.status", "op", "/co status"], ["coreprotect.consumer", "op", "/co consumer"], ["coreprotect.give", "false", "Команда give"],
+  ["coreprotect.networking", "op", "Networking API"]
 ];
 $("#permBase").innerHTML = PERM_BASE.map(([n, d, g]) => `<tr><td><code>${n}</code></td><td>${d}</td><td>${esc(g)}</td></tr>`).join("");
-const PERM_CHILD = [["block", "Block lookups"], ["chat", "Chat lookups"], ["click", "Interaction lookups"], ["command", "Command lookups"], ["container", "Container lookups"], ["inventory", "Inventory lookups"], ["item", "Item lookups"], ["kill", "Entity kill lookups"], ["spawn", "Entity spawn lookups"], ["near", "Lookups through /co near"], ["session", "Session lookups"], ["sign", "Sign lookups"], ["username", "Username change lookups"]];
+const PERM_CHILD = [["block", "Поиск по блокам"], ["chat", "Поиск по чату"], ["click", "Поиск взаимодействий"], ["command", "Поиск команд"], ["container", "Поиск по контейнерам"], ["inventory", "Поиск по инвентарю"], ["item", "Поиск по предметам"], ["kill", "Поиск убийств сущностей"], ["spawn", "Поиск призывов сущностей"], ["near", "Поиск через /co near"], ["session", "Поиск сессий"], ["sign", "Поиск по табличкам"], ["username", "Поиск смен ника"]];
 $("#permChild").innerHTML = PERM_CHILD.map(([n, d]) => `<tr><td><code>coreprotect.lookup.${n}</code></td><td>${d}</td></tr>`).join("");
 
 /* ---------- nav: scroll spy + sliding indicator ---------- */
@@ -1696,7 +1696,6 @@ heroObs.observe($(".hero"));
 addEventListener("resize", () => { placeInd(); worldSeed(); worldDraw(); LAB.bg = null; labDraw(performance.now()); });
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { placeInd(); LAB.bg = null; labDraw(performance.now()); });
 
-/* lab visibility */
 new IntersectionObserver(([e]) => { LAB.vis = e.isIntersecting; if (!e.isIntersecting) labDraw(performance.now()); }, { threshold: 0.01 }).observe($("#labMap"));
 
 /* ---------- motion on entry (content stays visible at rest) ---------- */
@@ -1706,7 +1705,7 @@ const io = new IntersectionObserver(entries => {
     if (!e.isIntersecting) return;
     const el = e.target;
     io.unobserve(el);
-    if (performance.now() - t0 < 250) return; // already on screen at load: no replay
+    if (performance.now() - t0 < 250) return;
     if (el.matches(".reveal")) el.classList.add("in");
     if (el.matches(".tl, [data-play]")) el.classList.add("play");
     if (el.matches(".panel-body")) replay(el);
